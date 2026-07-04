@@ -1,0 +1,6 @@
+text,vader,ml_model
+"Yeah, this laptop is 'great' if you enjoy waiting three weeks for a refund.",positive,negative
+"Not bad, but definitely not the best phone I've used either.",negative,neutral
+"I wanted to love this blender, but the noise ruined it for me.",negative,negative
+"This vacuum isn't terrible, it just isn't great.",negative,neutral
+"Sure, it's cheap, but you absolutely get what you pay for with this jacket.",neutral,positive

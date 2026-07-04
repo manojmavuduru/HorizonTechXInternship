@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentir — Live Sentiment Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1115;
+    --panel:#16191F;
+    --panel-border:#262A33;
+    --text:#EDEFF2;
+    --text-dim:#8A8F9C;
+    --green:#5FAE82;
+    --red:#D2685F;
+    --neutral:#8FA0C9;
+    --amber:#D9A24B;
+    --radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    padding:40px 24px 80px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .wrap{width:100%;max-width:880px;}
+
+  header{text-align:center;margin-bottom:36px;}
+  header h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:30px;
+    font-weight:700;
+  }
+  header p{
+    color:var(--text-dim);
+    font-size:14px;
+    margin-top:6px;
+  }
+
+  .demo-card{
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    border-radius:var(--radius);
+    padding:24px;
+    margin-bottom:24px;
+  }
+
+  textarea#input-text{
+    width:100%;
+    background:#1C212B;
+    border:1px solid var(--panel-border);
+    border-radius:12px;
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    font-size:15px;
+    padding:14px 16px;
+    resize:none;
+    min-height:90px;
+    outline:none;
+  }
+  textarea#input-text:focus{border-color:var(--neutral);}
+
+  .examples-row{
+    display:flex;
+    gap:8px;
+    margin-top:12px;
+    flex-wrap:wrap;
+  }
+  .example-chip{
+    font-size:12px;
+    padding:6px 13px;
+    border-radius:18px;
+    border:1px solid var(--panel-border);
+    background:transparent;
+    color:var(--text-dim);
+    cursor:pointer;
+    transition:all 0.15s;
+  }
+  .example-chip:hover{border-color:var(--amber);color:var(--amber);}
+
+  .result-area{
+    margin-top:20px;
+    display:none;
+  }
+  .result-area.show{display:block;}
+
+  .result-header{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:16px;
+  }
+  .result-badge{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:16px;
+    font-weight:700;
+    padding:8px 18px;
+    border-radius:20px;
+  }
+  .result-badge.positive{background:rgba(95,174,130,0.15);color:var(--green);}
+  .result-badge.negative{background:rgba(210,104,95,0.15);color:var(--red);}
+  .result-badge.neutral{background:rgba(143,160,201,0.15);color:var(--neutral);}
+
+  .confidence-bars{display:flex;flex-direction:column;gap:8px;}
+  .conf-row{display:flex;align-items:center;gap:10px;font-size:13px;}
+  .conf-label{width:70px;color:var(--text-dim);}
+  .conf-track{flex:1;height:8px;background:#1C212B;border-radius:4px;overflow:hidden;}
+  .conf-fill{height:100%;border-radius:4px;transition:width 0.4s ease;}
+  .conf-fill.positive{background:var(--green);}
+  .conf-fill.negative{background:var(--red);}
+  .conf-fill.neutral{background:var(--neutral);}
+  .conf-pct{width:42px;text-align:right;color:var(--text-dim);}
+
+  .features-note{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px solid var(--panel-border);
+    font-size:12.5px;
+    color:var(--text-dim);
+    line-height:1.6;
+  }
+  .features-note b{color:var(--text);}
+
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:14px;
+    margin-bottom:24px;
+  }
+  .stat-card{
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    border-radius:var(--radius);
+    padding:16px;
+  }
+  .stat-card .label{font-size:11.5px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;}
+  .stat-card .value{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;}
+  .stat-card .sub{font-size:12px;color:var(--text-dim);margin-top:4px;}
+
+  .model-note{
+    font-size:12.5px;
+    color:var(--text-dim);
+    text-align:center;
+    margin-top:8px;
+    line-height:1.6;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Sentir — live sentiment analysis</h1>
+    <p>Task 6: Sentiment Analysis (AI + Data Science) — Horizon TechX Internship</p>
+  </header>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="label">Model accuracy</div>
+      <div class="value">97.5%</div>
+      <div class="sub">held-out test set</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">vs lexicon baseline</div>
+      <div class="value">+17.5pp</div>
+      <div class="sub">VADER scored 80.1%</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Training examples</div>
+      <div class="value">962</div>
+      <div class="sub">reviews, social, news</div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <textarea id="input-text" placeholder="Type any sentence and see how the model classifies it in real time...">Not bad, but definitely not the best phone I've used either.</textarea>
+    <div class="examples-row" id="examples-row"></div>
+
+    <div class="result-area" id="result-area">
+      <div class="result-header">
+        <span class="result-badge" id="result-badge"></span>
+      </div>
+      <div class="confidence-bars" id="confidence-bars"></div>
+      <div class="features-note" id="features-note"></div>
+    </div>
+  </div>
+
+  <p class="model-note">
+    This is the actual trained model from the analysis — TF-IDF vectorization (unigrams + bigrams) feeding a logistic regression classifier — ported to run entirely client-side in JavaScript. Every prediction here is computed live in your browser, not pre-recorded.
+  </p>
+
+</div>
+
+<script>
+const STOPWORDS = new Set(__STOPWORDS_JSON__);
+const MODEL = __MODEL_JSON__;
+
+const VOCAB = MODEL.vocab;
+const IDF = MODEL.idf;
+const CLASSES = MODEL.classes;
+const COEF = MODEL.coef;
+const INTERCEPT = MODEL.intercept;
+
+function tokenize(text){
+  const matches = text.toLowerCase().match(/\b\w\w+\b/g) || [];
+  return matches.filter(t => !STOPWORDS.has(t));
+}
+
+function getNgrams(tokens, n){
+  const grams = [];
+  for(let i = 0; i <= tokens.length - n; i++){
+    grams.push(tokens.slice(i, i+n).join(' '));
+  }
+  return grams;
+}
+
+function vectorize(text){
+  const tokens = tokenize(text);
+  const unigrams = tokens;
+  const bigrams = getNgrams(tokens, 2);
+  const allTerms = [...unigrams, ...bigrams];
+
+  const termCounts = {};
+  allTerms.forEach(t => {
+    if(VOCAB.hasOwnProperty(t)){
+      termCounts[t] = (termCounts[t] || 0) + 1;
+    }
+  });
+
+  const vec = {};
+  let sumSquares = 0;
+  Object.keys(termCounts).forEach(term => {
+    const idx = VOCAB[term];
+    const tf = termCounts[term];
+    const tfidf = tf * IDF[idx];
+    vec[idx] = tfidf;
+    sumSquares += tfidf * tfidf;
+  });
+
+  const norm = Math.sqrt(sumSquares);
+  if(norm > 0){
+    Object.keys(vec).forEach(idx => { vec[idx] = vec[idx] / norm; });
+  }
+
+  return { vec, matchedTerms: Object.keys(termCounts) };
+}
+
+function softmax(scores){
+  const max = Math.max(...scores);
+  const exps = scores.map(s => Math.exp(s - max));
+  const sum = exps.reduce((a,b) => a+b, 0);
+  return exps.map(e => e / sum);
+}
+
+function predict(text){
+  const { vec, matchedTerms } = vectorize(text);
+
+  const scores = CLASSES.map((cls, classIdx) => {
+    let score = INTERCEPT[classIdx];
+    Object.keys(vec).forEach(idxStr => {
+      const idx = parseInt(idxStr);
+      score += COEF[classIdx][idx] * vec[idx];
+    });
+    return score;
+  });
+
+  const probs = softmax(scores);
+  const result = CLASSES.map((cls, i) => ({ label: cls, prob: probs[i] }));
+  result.sort((a,b) => b.prob - a.prob);
+
+  return { result, matchedTerms };
+}
+
+const EXAMPLES = [
+  "Absolutely love this product, exceeded all my expectations!",
+  "Terrible quality, broke after two days of use.",
+  "It arrived on schedule, packaging was standard.",
+  "Not bad, but definitely not the best I've used either.",
+  "Sure, it's cheap, but you get what you pay for.",
+];
+
+const examplesRow = document.getElementById('examples-row');
+EXAMPLES.forEach(ex => {
+  const chip = document.createElement('button');
+  chip.className = 'example-chip';
+  chip.textContent = ex.length > 40 ? ex.slice(0,40) + '…' : ex;
+  chip.addEventListener('click', () => {
+    document.getElementById('input-text').value = ex;
+    runPrediction();
+  });
+  examplesRow.appendChild(chip);
+});
+
+function runPrediction(){
+  const text = document.getElementById('input-text').value.trim();
+  const resultArea = document.getElementById('result-area');
+  if(!text){
+    resultArea.classList.remove('show');
+    return;
+  }
+
+  const { result, matchedTerms } = predict(text);
+  const top = result[0];
+
+  resultArea.classList.add('show');
+
+  const badge = document.getElementById('result-badge');
+  badge.className = 'result-badge ' + top.label;
+  badge.textContent = top.label.charAt(0).toUpperCase() + top.label.slice(1) + ' · ' + (top.prob*100).toFixed(1) + '% confidence';
+
+  const barsContainer = document.getElementById('confidence-bars');
+  barsContainer.innerHTML = result.map(r => `
+    <div class="conf-row">
+      <span class="conf-label">${r.label}</span>
+      <div class="conf-track"><div class="conf-fill ${r.label}" style="width:${(r.prob*100).toFixed(1)}%"></div></div>
+      <span class="conf-pct">${(r.prob*100).toFixed(0)}%</span>
+    </div>
+  `).join('');
+
+  const note = document.getElementById('features-note');
+  if(matchedTerms.length > 0){
+    note.innerHTML = `<b>Recognized terms:</b> ${matchedTerms.slice(0,12).join(', ')}`;
+  } else {
+    note.innerHTML = `No vocabulary terms from the training set were recognized in this text — prediction falls back to the class prior.`;
+  }
+}
+
+let debounceTimer;
+document.getElementById('input-text').addEventListener('input', () => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(runPrediction, 300);
+});
+
+runPrediction();
+</script>
+</body>
+</html>

@@ -1,0 +1,963 @@
+id,date,source,text,label
+1,2025-09-15,social_media,"heading to the grocery store, need to pick up a few things",neutral
+2,2025-04-25,review,"Just an update: the speaker is still being used, no new feedback.",neutral
+3,2025-03-15,review,"The jacket is slow, unreliable, and constantly malfunctions.",negative
+4,2025-10-17,review,"Awful experience, the air fryer was nothing like the pictures.",negative
+5,2025-02-17,review,"Horrible build quality, this laptop feels like a scam.",negative
+6,2025-11-06,news,Stock prices plummet after disappointing earnings report released.,negative
+7,2025-05-16,review,"Extremely frustrated with this coffee maker, asking for a refund.",negative
+8,2025-11-09,review,"Very disappointed with this blender, poor quality overall.",negative
+9,2025-03-25,review,"This router made my life so much easier, thank you!",positive
+10,2025-12-30,social_media,just tried the new coffee shop downtown and im obsessed!! best latte ever,positive
+11,2025-01-17,news,Officials criticized for slow response during the ongoing crisis.,negative
+12,2025-04-22,review,"Amazing quality for the price, highly recommend this monitor.",positive
+13,2025-02-16,review,"Extremely frustrated with this speaker, asking for a refund.",negative
+14,2025-11-22,review,"This phone case isn't perfect, but it's good enough for casual use.",neutral
+15,2025-08-14,news,New policy praised by experts for boosting economic growth significantly.,positive
+16,2025-11-17,review,"Horrible build quality, this backpack feels like a scam.",negative
+17,2025-03-14,review,The blender is overpriced and underperforms badly.,negative
+18,2025-03-25,review,"Beautifully designed running shoes, looks even better in person.",positive
+19,2025-07-05,news,Officials criticized for slow response during the ongoing crisis.,negative
+20,2025-04-02,review,The router arrived damaged and customer service was unhelpful.,negative
+21,2025-03-04,social_media,"can't believe how good this movie was, definitely watching it again",positive
+22,2025-06-30,review,Customer service was wonderful and the laptop arrived early.,positive
+23,2025-07-30,review,"I regret buying this coffee maker, total waste of time and money.",negative
+24,2025-07-04,social_media,"had the best weekend with my friends, feeling so grateful right now",positive
+25,2025-06-08,review,The blender matches the description provided on the listing.,neutral
+26,2025-08-21,review,"The air fryer has standard features, comparable to competitors.",neutral
+27,2025-12-23,review,"Fast shipping and the air fryer is exactly as described, great experience.",positive
+28,2025-05-29,social_media,just tried the new coffee shop downtown and im obsessed!! best latte ever,positive
+29,2025-04-21,review,"Just an update: the mattress is still being used, no new feedback.",neutral
+30,2025-08-18,review,"The speaker stopped functioning after one use, very disappointing.",negative
+31,2025-07-05,review,"Best air fryer I've ever bought, worth every penny.",positive
+32,2025-02-26,review,The blender looks amazing but the performance leaves a lot to be desired.,negative
+33,2025-04-20,review,"It's a headphones, works as expected for the price point.",neutral
+34,2025-08-06,news,Local team celebrates championship win after incredible season.,positive
+35,2025-02-22,review,"Amazing quality for the price, highly recommend this desk chair.",positive
+36,2025-09-21,review,"Waste of money, this vacuum doesn't work as advertised.",negative
+37,2025-10-14,review,"Best router I've ever bought, worth every penny.",positive
+38,2025-09-17,review,"My headphones works flawlessly, I use it every single day.",positive
+39,2025-01-20,review,"Very disappointed with this phone case, poor quality overall.",negative
+40,2025-03-06,social_media,"finally finished my project and it turned out amazing, so proud!!",positive
+41,2025-12-27,news,"New regulations to take effect starting next month, officials confirm.",neutral
+42,2025-09-06,review,"Best blender I've ever bought, worth every penny.",positive
+43,2025-03-31,social_media,"can't believe how good this movie was, definitely watching it again",positive
+44,2025-10-23,review,"Terrible tablet, broke after just two days of use.",negative
+45,2025-08-26,review,"Just an update: the speaker is still being used, no new feedback.",neutral
+46,2025-05-02,review,"Best webcam I've ever bought, worth every penny.",positive
+47,2025-05-01,review,"Average desk chair, gets the job done but nothing special.",neutral
+48,2025-11-23,review,The smartwatch arrived damaged and customer service was unhelpful.,negative
+49,2025-06-17,review,"Waste of money, this monitor doesn't work as advertised.",negative
+50,2025-09-14,review,"The coffee maker ships in a basic box, no special packaging.",neutral
+51,2025-08-21,review,The monitor matches the description provided on the listing.,neutral
+52,2025-07-17,review,"I wanted to love this coffee maker, but the battery life ruined it for me.",negative
+53,2025-03-10,review,"The running shoes is durable, stylish, and works great.",positive
+54,2026-01-01,review,Customer service was wonderful and the blender arrived early.,positive
+55,2025-08-02,social_media,rescheduled my appointment to next week instead of this friday,neutral
+56,2025-10-01,social_media,"ordered food an hour ago and it still hasn't arrived, ridiculous",negative
+57,2025-10-04,review,"Super happy with my purchase, the headphones is top notch.",positive
+58,2025-08-19,news,Stock prices plummet after disappointing earnings report released.,negative
+59,2025-08-23,review,"This monitor made my life so much easier, thank you!",positive
+60,2025-04-05,review,The keyboard is overpriced and underperforms badly.,negative
+61,2025-09-09,review,"Just an update: the running shoes is still being used, no new feedback.",neutral
+62,2025-07-25,review,"The jacket has standard features, comparable to competitors.",neutral
+63,2025-12-08,review,"My monitor works flawlessly, I use it every single day.",positive
+64,2025-04-23,review,"Horrible build quality, this router feels like a scam.",negative
+65,2025-12-10,review,"Average desk chair, gets the job done but nothing special.",neutral
+66,2025-09-12,review,"This laptop does what it says, nothing more nothing less.",neutral
+67,2025-10-10,review,"Do not buy this keyboard, it stopped working within a week.",negative
+68,2025-10-13,review,"The vacuum stopped functioning after one use, very disappointing.",negative
+69,2025-09-30,review,I received the vacuum yesterday and haven't tested it fully yet.,neutral
+70,2025-11-17,review,"Horrible build quality, this speaker feels like a scam.",negative
+71,2025-12-15,review,"This headphones works perfectly, couldn't be happier.",positive
+72,2025-02-07,news,Annual conference scheduled to take place in the downtown venue.,neutral
+73,2025-01-01,review,"Beautifully designed air fryer, looks even better in person.",positive
+74,2025-05-23,review,"Five stars, this headphones is fantastic and very well made.",positive
+75,2025-02-25,review,"Five stars, this keyboard is fantastic and very well made.",positive
+76,2025-10-04,review,The desk chair arrived damaged and customer service was unhelpful.,negative
+77,2025-02-19,review,"Amazing quality for the price, highly recommend this running shoes.",positive
+78,2025-02-06,review,The router matches the description provided on the listing.,neutral
+79,2025-07-29,review,"The desk chair stopped functioning after one use, very disappointing.",negative
+80,2025-05-19,review,Customer service was wonderful and the vacuum arrived early.,positive
+81,2025-03-12,review,"It's a backpack, works as expected for the price point.",neutral
+82,2025-06-06,review,The tablet is overpriced and underperforms badly.,negative
+83,2025-12-05,review,"Beautifully designed mattress, looks even better in person.",positive
+84,2025-07-15,review,"I bought this monitor to replace an older model, seems similar.",neutral
+85,2025-06-23,review,"Wow, never thought a mattress could make me this happy, incredible find.",positive
+86,2025-03-15,news,Factory shutdown leaves hundreds of workers without jobs this week.,negative
+87,2025-03-31,review,"The air fryer ships in a basic box, no special packaging.",neutral
+88,2025-07-24,news,New policy praised by experts for boosting economic growth significantly.,positive
+89,2025-04-08,review,"Amazing quality for the price, highly recommend this backpack.",positive
+90,2025-01-24,social_media,"watching the game tonight, not sure who's going to win honestly",neutral
+91,2025-08-16,news,Stock prices plummet after disappointing earnings report released.,negative
+92,2025-09-03,review,"Worst speaker I've ever purchased, complete garbage.",negative
+93,2025-07-02,news,"Company reports record quarterly profits, stock surges on strong earnings.",positive
+94,2025-03-07,review,"Will definitely buy this smartwatch again, no complaints at all.",positive
+95,2025-03-16,review,"Terrible tablet, broke after just two days of use.",negative
+96,2025-03-23,news,Factory shutdown leaves hundreds of workers without jobs this week.,negative
+97,2025-11-23,news,Economists warn of recession risk as unemployment numbers rise sharply.,negative
+98,2025-07-30,review,"Average running shoes, gets the job done but nothing special.",neutral
+99,2025-12-02,review,"This running shoes does what it says, nothing more nothing less.",neutral
+100,2025-10-28,review,The router is overpriced and underperforms badly.,negative
+101,2025-11-23,review,"Super happy with my purchase, the desk chair is top notch.",positive
+102,2025-08-27,review,"Super happy with my purchase, the speaker is top notch.",positive
+103,2025-01-25,news,"Company reports record quarterly profits, stock surges on strong earnings.",positive
+104,2025-01-08,review,"Awful experience, the smartwatch was nothing like the pictures.",negative
+105,2025-11-06,review,I received the backpack yesterday and haven't tested it fully yet.,neutral
+106,2025-04-03,review,I received the headphones yesterday and haven't tested it fully yet.,neutral
+107,2025-05-03,review,"Amazing quality for the price, highly recommend this keyboard.",positive
+108,2025-09-05,social_media,"got my package today, haven't opened it yet",neutral
+109,2025-01-24,review,"This laptop works perfectly, couldn't be happier.",positive
+110,2025-10-09,review,"This speaker made my life so much easier, thank you!",positive
+111,2025-05-20,review,"Not bad, but definitely not the best headphones I've used either.",neutral
+112,2025-11-17,review,"The running shoes is durable, stylish, and works great.",positive
+113,2025-05-18,review,"Five stars, this jacket is fantastic and very well made.",positive
+114,2025-12-20,review,"Worst air fryer I've ever purchased, complete garbage.",negative
+115,2025-10-26,review,"Average blender, gets the job done but nothing special.",neutral
+116,2025-11-08,news,Factory shutdown leaves hundreds of workers without jobs this week.,negative
+117,2025-01-17,review,"Great value, the air fryer performs better than I expected.",positive
+118,2025-06-08,review,"This blender is functional, no major issues to report so far.",neutral
+119,2025-04-22,review,"Terrible router, broke after just two days of use.",negative
+120,2025-07-09,review,"The coffee maker is durable, stylish, and works great.",positive
+121,2025-12-12,review,"Waste of money, this coffee maker doesn't work as advertised.",negative
+122,2025-11-24,social_media,"trying out a new recipe tonight, we'll see how it goes",neutral
+123,2025-04-27,review,"The smartwatch has standard features, comparable to competitors.",neutral
+124,2025-09-30,review,"Will definitely buy this blender again, no complaints at all.",positive
+125,2025-12-14,news,Stock prices plummet after disappointing earnings report released.,negative
+126,2026-01-01,review,"This keyboard does what it says, nothing more nothing less.",neutral
+127,2025-11-07,review,"Awful experience, the air fryer was nothing like the pictures.",negative
+128,2025-03-07,social_media,"stuck in traffic for two hours and now im late, worst monday ever",negative
+129,2025-12-26,review,"Do not buy this router, it stopped working within a week.",negative
+130,2025-03-08,social_media,why does my wifi keep dropping every five minutes this is so annoying,negative
+131,2025-09-17,review,"It's not the worst webcam out there, but I wouldn't buy it again.",negative
+132,2025-12-14,review,"This monitor does what it says, nothing more nothing less.",neutral
+133,2025-11-20,review,"The speaker has flaws, sure, but overall I'm genuinely satisfied with it.",positive
+134,2025-10-09,review,"Do not buy this air fryer, it stopped working within a week.",negative
+135,2025-03-27,news,"City unveils new park, residents excited about green space expansion.",positive
+136,2025-02-22,news,Breakthrough treatment shows promising results in clinical trials.,positive
+137,2025-02-03,review,"Just an update: the keyboard is still being used, no new feedback.",neutral
+138,2025-06-03,review,"Will definitely buy this mattress again, no complaints at all.",positive
+139,2025-02-05,review,"This vacuum is functional, no major issues to report so far.",neutral
+140,2025-10-07,social_media,"trying out a new recipe tonight, we'll see how it goes",neutral
+141,2025-02-21,review,This keyboard is cheaply made and fell apart immediately.,negative
+142,2025-10-07,review,"The desk chair is durable, stylish, and works great.",positive
+143,2025-12-28,review,"This desk chair isn't terrible, it just isn't great.",neutral
+144,2025-01-12,review,"Worst monitor I've ever purchased, complete garbage.",negative
+145,2025-11-10,review,"I'm so impressed with this smartwatch, it's a game changer.",positive
+146,2025-10-28,review,"I would not recommend this jacket to anyone, total disaster.",negative
+147,2025-09-29,review,"The router is slow, unreliable, and constantly malfunctions.",negative
+148,2025-12-17,review,"Beautifully designed monitor, looks even better in person.",positive
+149,2025-02-14,social_media,"this playlist is literally perfect for studying, 10/10 recommend",positive
+150,2025-04-18,review,"I'm so impressed with this router, it's a game changer.",positive
+151,2025-07-06,review,"Beautifully designed backpack, looks even better in person.",positive
+152,2025-10-10,social_media,why does my wifi keep dropping every five minutes this is so annoying,negative
+153,2025-08-21,social_media,"got my package today, haven't opened it yet",neutral
+154,2025-02-14,news,Department releases updated guidelines for upcoming fiscal year.,neutral
+155,2025-09-07,review,"Just an update: the jacket is still being used, no new feedback.",neutral
+156,2025-04-27,review,"I'm so impressed with this monitor, it's a game changer.",positive
+157,2025-07-24,review,"Amazing quality for the price, highly recommend this monitor.",positive
+158,2025-09-12,news,New policy praised by experts for boosting economic growth significantly.,positive
+159,2025-09-07,review,"The coffee maker is durable, stylish, and works great.",positive
+160,2025-08-30,review,"I would not recommend this speaker to anyone, total disaster.",negative
+161,2025-05-03,review,"Waste of money, this headphones doesn't work as advertised.",negative
+162,2025-07-28,review,"Waste of money, this coffee maker doesn't work as advertised.",negative
+163,2025-01-27,review,"Average water bottle, gets the job done but nothing special.",neutral
+164,2025-04-26,review,This water bottle is cheaply made and fell apart immediately.,negative
+165,2025-02-08,review,Customer service was wonderful and the coffee maker arrived early.,positive
+166,2025-12-17,review,"Wow, never thought a headphones could make me this happy, incredible find.",positive
+167,2025-08-20,news,Annual conference scheduled to take place in the downtown venue.,neutral
+168,2025-05-07,review,"Fast shipping and the desk chair is exactly as described, great experience.",positive
+169,2025-08-27,review,"Extremely frustrated with this laptop, asking for a refund.",negative
+170,2025-10-09,social_media,just tried the new coffee shop downtown and im obsessed!! best latte ever,positive
+171,2025-05-21,review,"Awful experience, the desk chair was nothing like the pictures.",negative
+172,2025-01-08,review,"Absolutely love this mattress, exceeded all my expectations!",positive
+173,2025-11-09,review,The webcam matches the description provided on the listing.,neutral
+174,2025-03-01,review,"Worst speaker I've ever purchased, complete garbage.",negative
+175,2025-07-27,review,"Great value, the monitor performs better than I expected.",positive
+176,2025-03-21,review,The backpack matches the description provided on the listing.,neutral
+177,2025-02-08,review,"Very disappointed with this mattress, poor quality overall.",negative
+178,2025-08-16,review,"Waste of money, this running shoes doesn't work as advertised.",negative
+179,2025-10-10,review,"Awful experience, the laptop was nothing like the pictures.",negative
+180,2025-07-05,review,"Absolutely love this running shoes, exceeded all my expectations!",positive
+181,2025-01-27,review,"Absolutely love this mattress, exceeded all my expectations!",positive
+182,2025-07-19,review,Customer service was wonderful and the laptop arrived early.,positive
+183,2025-03-09,review,"Just an update: the laptop is still being used, no new feedback.",neutral
+184,2025-04-11,social_media,"can't believe they cancelled the show last minute, so disappointed",negative
+185,2025-08-18,review,"This monitor is functional, no major issues to report so far.",neutral
+186,2025-01-21,review,"Waste of money, this water bottle doesn't work as advertised.",negative
+187,2025-11-29,review,This vacuum is cheaply made and fell apart immediately.,negative
+188,2025-08-31,review,"I can't say I hate this mattress, but I definitely don't love it either.",neutral
+189,2025-09-12,social_media,"trying out a new recipe tonight, we'll see how it goes",neutral
+190,2025-02-21,review,This monitor is cheaply made and fell apart immediately.,negative
+191,2025-05-08,review,"Absolutely love this mattress, exceeded all my expectations!",positive
+192,2025-07-05,social_media,"can't believe how good this movie was, definitely watching it again",positive
+193,2025-08-09,review,"Fast shipping and the backpack is exactly as described, great experience.",positive
+194,2025-05-09,review,Customer service was wonderful and the webcam arrived early.,positive
+195,2025-07-09,review,"Average headphones, gets the job done but nothing special.",neutral
+196,2025-01-09,review,"This keyboard is functional, no major issues to report so far.",neutral
+197,2025-07-22,review,"Do not buy this blender, it stopped working within a week.",negative
+198,2025-09-18,review,"The water bottle is slow, unreliable, and constantly malfunctions.",negative
+199,2025-07-24,review,"I'm so impressed with this webcam, it's a game changer.",positive
+200,2025-07-23,news,City council to vote on new zoning proposal next Tuesday afternoon.,neutral
+201,2025-11-09,review,"Amazing quality for the price, highly recommend this speaker.",positive
+202,2025-12-13,review,"This vacuum made my life so much easier, thank you!",positive
+203,2025-02-03,social_media,"this playlist is literally perfect for studying, 10/10 recommend",positive
+204,2025-02-20,review,"Terrible water bottle, broke after just two days of use.",negative
+205,2025-01-18,news,Factory shutdown leaves hundreds of workers without jobs this week.,negative
+206,2025-05-21,social_media,"ordered food an hour ago and it still hasn't arrived, ridiculous",negative
+207,2025-11-14,review,"Extremely frustrated with this backpack, asking for a refund.",negative
+208,2025-04-08,review,"I regret buying this tablet, total waste of time and money.",negative
+209,2025-11-12,review,"Beautifully designed headphones, looks even better in person.",positive
+210,2025-07-14,review,"I'm so impressed with this keyboard, it's a game changer.",positive
+211,2025-06-06,review,"The coffee maker stopped functioning after one use, very disappointing.",negative
+212,2025-05-04,review,"Honestly didn't expect much, and somehow this router still disappointed me.",negative
+213,2025-10-15,review,"This mattress is functional, no major issues to report so far.",neutral
+214,2025-09-06,review,"I bought this air fryer to replace an older model, seems similar.",neutral
+215,2025-05-05,review,"Terrible keyboard, broke after just two days of use.",negative
+216,2025-05-21,news,Company faces backlash after massive data breach affects millions.,negative
+217,2025-03-11,review,"This air fryer made my life so much easier, thank you!",positive
+218,2025-09-03,social_media,"finally finished my project and it turned out amazing, so proud!!",positive
+219,2025-05-26,review,"Just an update: the vacuum is still being used, no new feedback.",neutral
+220,2025-03-11,review,"The headphones has flaws, sure, but overall I'm genuinely satisfied with it.",positive
+221,2025-11-07,review,"Horrible build quality, this coffee maker feels like a scam.",negative
+222,2025-04-01,review,"This air fryer works perfectly, couldn't be happier.",positive
+223,2025-12-09,review,"This speaker works perfectly, couldn't be happier.",positive
+224,2025-02-04,review,"It's not the worst router out there, but I wouldn't buy it again.",negative
+225,2025-08-16,news,Department releases updated guidelines for upcoming fiscal year.,neutral
+226,2025-07-22,review,"I wanted to love this phone case, but the battery life ruined it for me.",negative
+227,2025-09-13,news,Quarterly report shows steady performance in line with expectations.,neutral
+228,2025-05-20,review,"The blender arrived on schedule, packaging was standard.",neutral
+229,2025-03-18,review,This speaker is cheaply made and fell apart immediately.,negative
+230,2025-04-21,review,"Very disappointed with this backpack, poor quality overall.",negative
+231,2025-05-17,review,"The webcam is slow, unreliable, and constantly malfunctions.",negative
+232,2025-09-01,review,"The headphones is durable, stylish, and works great.",positive
+233,2025-05-21,review,"I bought this monitor to replace an older model, seems similar.",neutral
+234,2025-02-07,social_media,"finally finished my project and it turned out amazing, so proud!!",positive
+235,2025-08-27,social_media,"stuck in traffic for two hours and now im late, worst monday ever",negative
+236,2025-03-04,review,"The speaker is slow, unreliable, and constantly malfunctions.",negative
+237,2025-11-07,review,"Super happy with my purchase, the jacket is top notch.",positive
+238,2025-10-26,review,"Absolutely love this router, exceeded all my expectations!",positive
+239,2025-09-28,review,"Sure, it's cheap, but you absolutely get what you pay for with this water bottle.",negative
+240,2025-11-22,review,"Extremely frustrated with this blender, asking for a refund.",negative
+241,2025-08-08,review,"Fast shipping and the jacket is exactly as described, great experience.",positive
+242,2025-01-09,review,"This tablet isn't perfect, but it's good enough for casual use.",neutral
+243,2025-07-29,review,"It's a vacuum, works as expected for the price point.",neutral
+244,2025-03-21,review,"The desk chair is okay, similar to other ones I've owned.",neutral
+245,2025-11-02,review,The speaker looks amazing but the performance leaves a lot to be desired.,negative
+246,2025-08-23,review,"The blender has flaws, sure, but overall I'm genuinely satisfied with it.",positive
+247,2025-09-18,social_media,"can't believe how good this movie was, definitely watching it again",positive
+248,2025-02-10,news,Breakthrough treatment shows promising results in clinical trials.,positive
+249,2025-07-30,social_media,"finally finished my project and it turned out amazing, so proud!!",positive
+250,2025-07-11,review,"Worst router I've ever purchased, complete garbage.",negative
+251,2025-06-24,review,"Beautifully designed air fryer, looks even better in person.",positive
+252,2025-01-22,review,"I can't say I hate this backpack, but I definitely don't love it either.",neutral
+253,2025-06-20,review,"Absolutely love this laptop, exceeded all my expectations!",positive
+254,2025-09-18,review,"Just an update: the air fryer is still being used, no new feedback.",neutral
+255,2025-08-09,news,Local team celebrates championship win after incredible season.,positive
+256,2025-11-25,review,"Yeah, this phone case is 'great' if you enjoy waiting three weeks for a refund.",negative
+257,2025-04-07,review,"I regret buying this phone case, total waste of time and money.",negative
+258,2025-06-22,review,This vacuum is cheaply made and fell apart immediately.,negative
+259,2025-08-10,social_media,why does my wifi keep dropping every five minutes this is so annoying,negative
+260,2025-09-11,review,"Extremely frustrated with this desk chair, asking for a refund.",negative
+261,2025-09-08,review,"Will definitely buy this air fryer again, no complaints at all.",positive
+262,2025-02-10,review,"Amazing quality for the price, highly recommend this monitor.",positive
+263,2025-04-15,review,The phone case is overpriced and underperforms badly.,negative
+264,2025-11-25,social_media,"heading to the grocery store, need to pick up a few things",neutral
+265,2025-12-16,news,Department releases updated guidelines for upcoming fiscal year.,neutral
+266,2025-11-05,review,"Amazing quality for the price, highly recommend this webcam.",positive
+267,2025-06-15,social_media,"just lost my favorite sweater at the gym, today is not my day",negative
+268,2025-01-13,review,"The air fryer is durable, stylish, and works great.",positive
+269,2025-03-31,review,"The air fryer stopped functioning after one use, very disappointing.",negative
+270,2025-02-05,review,"This router works perfectly, couldn't be happier.",positive
+271,2025-12-30,social_media,"just lost my favorite sweater at the gym, today is not my day",negative
+272,2025-12-25,review,"The monitor stopped functioning after one use, very disappointing.",negative
+273,2025-09-26,review,"The jacket stopped functioning after one use, very disappointing.",negative
+274,2025-07-16,news,Officials criticized for slow response during the ongoing crisis.,negative
+275,2025-11-13,social_media,rescheduled my appointment to next week instead of this friday,neutral
+276,2025-02-08,review,"I would not recommend this desk chair to anyone, total disaster.",negative
+277,2025-09-08,review,"Extremely frustrated with this running shoes, asking for a refund.",negative
+278,2025-08-13,review,"Awful experience, the speaker was nothing like the pictures.",negative
+279,2025-11-07,review,"This water bottle works perfectly, couldn't be happier.",positive
+280,2025-05-16,review,"This jacket works perfectly, couldn't be happier.",positive
+281,2025-07-18,news,Quarterly report shows steady performance in line with expectations.,neutral
+282,2025-06-22,social_media,"watching the game tonight, not sure who's going to win honestly",neutral
+283,2025-10-21,news,City council to vote on new zoning proposal next Tuesday afternoon.,neutral
+284,2025-06-14,review,"This backpack is functional, no major issues to report so far.",neutral
+285,2025-10-20,social_media,rescheduled my appointment to next week instead of this friday,neutral
+286,2025-06-05,social_media,"ordered food an hour ago and it still hasn't arrived, ridiculous",negative
+287,2025-01-24,review,The monitor matches the description provided on the listing.,neutral
+288,2025-09-27,social_media,"finally finished my project and it turned out amazing, so proud!!",positive
+289,2025-01-29,review,"This keyboard made my life so much easier, thank you!",positive
+290,2025-12-05,review,"Horrible build quality, this jacket feels like a scam.",negative
+291,2025-10-23,review,"Average running shoes, gets the job done but nothing special.",neutral
+292,2025-06-19,review,"This mattress made my life so much easier, thank you!",positive
+293,2025-12-08,review,"Amazing quality for the price, highly recommend this coffee maker.",positive
+294,2025-08-11,review,"The blender stopped functioning after one use, very disappointing.",negative
+295,2025-01-27,review,"This blender is functional, no major issues to report so far.",neutral
+296,2025-03-09,review,This router is cheaply made and fell apart immediately.,negative
+297,2025-05-14,review,"My keyboard works flawlessly, I use it every single day.",positive
+298,2025-12-10,news,Economists warn of recession risk as unemployment numbers rise sharply.,negative
+299,2025-09-28,review,"This tablet works perfectly, couldn't be happier.",positive
+300,2025-07-27,review,"Worst coffee maker I've ever purchased, complete garbage.",negative
+301,2025-07-01,review,"This air fryer made my life so much easier, thank you!",positive
+302,2025-03-08,review,"It's a vacuum, works as expected for the price point.",neutral
+303,2025-11-11,review,The coffee maker matches the description provided on the listing.,neutral
+304,2025-01-14,review,"Great value, the mattress performs better than I expected.",positive
+305,2026-01-01,news,Department releases updated guidelines for upcoming fiscal year.,neutral
+306,2025-01-21,review,"Great value, the water bottle performs better than I expected.",positive
+307,2025-07-11,review,"This vacuum isn't perfect, but it's good enough for casual use.",neutral
+308,2025-08-13,review,"This router made my life so much easier, thank you!",positive
+309,2025-05-17,review,"Extremely frustrated with this desk chair, asking for a refund.",negative
+310,2025-06-30,review,"Wow, never thought a phone case could make me this happy, incredible find.",positive
+311,2025-02-01,review,"I bought this laptop to replace an older model, seems similar.",neutral
+312,2025-11-13,review,"The keyboard arrived on schedule, packaging was standard.",neutral
+313,2025-11-25,social_media,rescheduled my appointment to next week instead of this friday,neutral
+314,2025-07-10,review,I received the router yesterday and haven't tested it fully yet.,neutral
+315,2025-03-29,social_media,"heading to the grocery store, need to pick up a few things",neutral
+316,2025-12-13,review,"The monitor is slow, unreliable, and constantly malfunctions.",negative
+317,2025-08-09,review,"My desk chair works flawlessly, I use it every single day.",positive
+318,2025-11-21,review,"It's a water bottle, works as expected for the price point.",neutral
+319,2025-08-29,review,The water bottle is overpriced and underperforms badly.,negative
+320,2025-12-07,review,"Five stars, this blender is fantastic and very well made.",positive
+321,2025-01-27,review,I received the tablet yesterday and haven't tested it fully yet.,neutral
+322,2025-12-05,review,"My air fryer works flawlessly, I use it every single day.",positive
+323,2025-12-20,news,"City unveils new park, residents excited about green space expansion.",positive
+324,2025-10-23,review,The blender is overpriced and underperforms badly.,negative
+325,2025-08-08,review,"This coffee maker is functional, no major issues to report so far.",neutral
+326,2025-10-03,review,"Waste of money, this coffee maker doesn't work as advertised.",negative
+327,2025-02-07,review,"The smartwatch ships in a basic box, no special packaging.",neutral
+328,2025-01-30,news,Economists warn of recession risk as unemployment numbers rise sharply.,negative
+329,2025-07-08,review,Customer service was wonderful and the tablet arrived early.,positive
+330,2025-12-05,review,"Best phone case I've ever bought, worth every penny.",positive
+331,2025-04-07,review,The keyboard is overpriced and underperforms badly.,negative
+332,2025-12-15,social_media,"stuck in traffic for two hours and now im late, worst monday ever",negative
+333,2025-10-12,review,"This router does what it says, nothing more nothing less.",neutral
+334,2025-10-22,review,"Honestly didn't expect much, and somehow this webcam still disappointed me.",negative
+335,2025-05-24,review,This air fryer is cheaply made and fell apart immediately.,negative
+336,2025-08-03,review,"Great value, the blender performs better than I expected.",positive
+337,2025-04-20,news,"New regulations to take effect starting next month, officials confirm.",neutral
+338,2025-09-27,review,The mattress matches the description provided on the listing.,neutral
+339,2025-01-31,review,I received the mattress yesterday and haven't tested it fully yet.,neutral
+340,2025-02-20,review,Customer service was wonderful and the mattress arrived early.,positive
+341,2025-09-29,review,The mattress is overpriced and underperforms badly.,negative
+342,2025-06-28,review,The backpack matches the description provided on the listing.,neutral
+343,2025-01-11,review,"Amazing quality for the price, highly recommend this backpack.",positive
+344,2025-10-15,review,"Terrible water bottle, broke after just two days of use.",negative
+345,2025-02-12,news,Local team celebrates championship win after incredible season.,positive
+346,2025-01-30,review,"Absolutely love this keyboard, exceeded all my expectations!",positive
+347,2025-11-14,review,"The air fryer is durable, stylish, and works great.",positive
+348,2025-05-16,review,"Amazing quality for the price, highly recommend this webcam.",positive
+349,2025-01-14,social_media,"had the best weekend with my friends, feeling so grateful right now",positive
+350,2025-11-11,review,The water bottle matches the description provided on the listing.,neutral
+351,2025-02-24,review,"This laptop made my life so much easier, thank you!",positive
+352,2025-09-08,review,"Great value, the keyboard performs better than I expected.",positive
+353,2025-05-22,review,"The speaker stopped functioning after one use, very disappointing.",negative
+354,2025-03-21,review,"Beautifully designed mattress, looks even better in person.",positive
+355,2025-05-27,review,"The router arrived on schedule, packaging was standard.",neutral
+356,2025-04-21,review,"The webcam ships in a basic box, no special packaging.",neutral
+357,2025-03-09,review,"Worst mattress I've ever purchased, complete garbage.",negative
+358,2025-12-27,review,"Great value, the backpack performs better than I expected.",positive
+359,2025-12-22,news,Annual conference scheduled to take place in the downtown venue.,neutral
+360,2025-05-31,review,"The phone case has flaws, sure, but overall I'm genuinely satisfied with it.",positive
+361,2025-05-21,review,Customer service was wonderful and the coffee maker arrived early.,positive
+362,2025-01-31,review,"Amazing quality for the price, highly recommend this vacuum.",positive
+363,2025-09-29,news,City council to vote on new zoning proposal next Tuesday afternoon.,neutral
+364,2025-10-07,news,Breakthrough treatment shows promising results in clinical trials.,positive
+365,2025-08-25,review,"I would not recommend this mattress to anyone, total disaster.",negative
+366,2025-10-27,review,"Extremely frustrated with this tablet, asking for a refund.",negative
+367,2025-10-04,review,"I'm so impressed with this keyboard, it's a game changer.",positive
+368,2025-08-16,review,"The coffee maker ships in a basic box, no special packaging.",neutral
+369,2025-03-30,news,Annual conference scheduled to take place in the downtown venue.,neutral
+370,2025-06-08,social_media,"this playlist is literally perfect for studying, 10/10 recommend",positive
+371,2025-05-28,review,"I regret buying this speaker, total waste of time and money.",negative
+372,2025-03-28,social_media,"heading to the grocery store, need to pick up a few things",neutral
+373,2025-04-08,review,"Terrible webcam, broke after just two days of use.",negative
+374,2025-03-16,review,"This keyboard isn't terrible, it just isn't great.",neutral
+375,2025-08-29,review,"I bought this blender to replace an older model, seems similar.",neutral
+376,2025-09-11,review,"Beautifully designed vacuum, looks even better in person.",positive
+377,2025-04-04,social_media,why does my wifi keep dropping every five minutes this is so annoying,negative
+378,2025-02-21,review,"This monitor does what it says, nothing more nothing less.",neutral
+379,2025-08-13,news,Factory shutdown leaves hundreds of workers without jobs this week.,negative
+380,2025-02-11,social_media,"watching the game tonight, not sure who's going to win honestly",neutral
+381,2025-10-31,social_media,"heading to the grocery store, need to pick up a few things",neutral
+382,2025-08-12,review,"Very disappointed with this jacket, poor quality overall.",negative
+383,2025-02-19,review,"Best vacuum I've ever bought, worth every penny.",positive
+384,2025-06-15,review,"Just an update: the water bottle is still being used, no new feedback.",neutral
+385,2025-01-01,review,"Super happy with my purchase, the webcam is top notch.",positive
+386,2025-07-09,news,Stock prices plummet after disappointing earnings report released.,negative
+387,2025-07-27,social_media,"got my package today, haven't opened it yet",neutral
+388,2025-11-16,review,"The keyboard is durable, stylish, and works great.",positive
+389,2025-05-27,news,"New regulations to take effect starting next month, officials confirm.",neutral
+390,2025-04-20,review,"Fast shipping and the speaker is exactly as described, great experience.",positive
+391,2025-01-05,review,"I'm so impressed with this blender, it's a game changer.",positive
+392,2025-11-11,social_media,"ordered food an hour ago and it still hasn't arrived, ridiculous",negative
+393,2025-05-23,news,City council to vote on new zoning proposal next Tuesday afternoon.,neutral
+394,2025-04-26,review,"I regret buying this blender, total waste of time and money.",negative
+395,2025-03-01,review,"Worst air fryer I've ever purchased, complete garbage.",negative
+396,2025-10-12,review,"The tablet is slow, unreliable, and constantly malfunctions.",negative
+397,2025-10-28,review,"The monitor stopped functioning after one use, very disappointing.",negative
+398,2025-09-29,review,The running shoes matches the description provided on the listing.,neutral
+399,2025-01-11,review,"Best keyboard I've ever bought, worth every penny.",positive
+400,2025-07-26,review,"Five stars, this keyboard is fantastic and very well made.",positive
+401,2025-10-06,review,"It's not the worst webcam out there, but I wouldn't buy it again.",negative
+402,2025-05-15,review,Customer service was wonderful and the laptop arrived early.,positive
+403,2025-08-13,review,"The smartwatch ships in a basic box, no special packaging.",neutral
+404,2025-11-25,review,"Extremely frustrated with this backpack, asking for a refund.",negative
+405,2025-05-15,news,"New regulations to take effect starting next month, officials confirm.",neutral
+406,2025-12-04,review,"Amazing quality for the price, highly recommend this laptop.",positive
+407,2025-06-12,social_media,"finally finished my project and it turned out amazing, so proud!!",positive
+408,2025-06-29,news,Company faces backlash after massive data breach affects millions.,negative
+409,2025-06-27,review,"Super happy with my purchase, the phone case is top notch.",positive
+410,2025-07-26,review,"Will definitely buy this coffee maker again, no complaints at all.",positive
+411,2025-05-14,review,"Absolutely love this running shoes, exceeded all my expectations!",positive
+412,2025-12-29,review,"Worst laptop I've ever purchased, complete garbage.",negative
+413,2025-01-19,review,"I can't say I hate this tablet, but I definitely don't love it either.",neutral
+414,2025-06-21,review,"This water bottle made my life so much easier, thank you!",positive
+415,2025-09-20,news,Economists warn of recession risk as unemployment numbers rise sharply.,negative
+416,2025-12-13,review,"The router has standard features, comparable to competitors.",neutral
+417,2025-06-14,news,Breakthrough treatment shows promising results in clinical trials.,positive
+418,2025-05-07,review,Customer service was wonderful and the tablet arrived early.,positive
+419,2025-08-22,review,"The running shoes is durable, stylish, and works great.",positive
+420,2025-08-12,news,"Company reports record quarterly profits, stock surges on strong earnings.",positive
+421,2025-08-13,review,"Fast shipping and the headphones is exactly as described, great experience.",positive
+422,2025-05-25,review,"I would not recommend this laptop to anyone, total disaster.",negative
+423,2025-05-06,review,"I regret buying this desk chair, total waste of time and money.",negative
+424,2025-12-11,review,"Best coffee maker I've ever bought, worth every penny.",positive
+425,2025-03-22,review,"Fast shipping and the air fryer is exactly as described, great experience.",positive
+426,2025-07-10,review,"The running shoes has standard features, comparable to competitors.",neutral
+427,2025-11-08,review,"This keyboard does what it says, nothing more nothing less.",neutral
+428,2025-10-25,social_media,"heading to the grocery store, need to pick up a few things",neutral
+429,2025-02-20,review,"I wanted to love this keyboard, but the battery life ruined it for me.",negative
+430,2025-05-09,social_media,"can't believe they cancelled the show last minute, so disappointed",negative
+431,2025-12-26,review,I received the tablet yesterday and haven't tested it fully yet.,neutral
+432,2025-04-10,review,"It's a speaker, works as expected for the price point.",neutral
+433,2025-11-14,review,"Worst jacket I've ever purchased, complete garbage.",negative
+434,2025-07-17,news,New policy praised by experts for boosting economic growth significantly.,positive
+435,2025-06-23,news,New policy praised by experts for boosting economic growth significantly.,positive
+436,2025-08-12,review,"The phone case has standard features, comparable to competitors.",neutral
+437,2025-09-05,review,The mattress is overpriced and underperforms badly.,negative
+438,2025-02-04,news,Officials criticized for slow response during the ongoing crisis.,negative
+439,2025-08-30,review,"This monitor isn't terrible, it just isn't great.",neutral
+440,2025-02-08,review,"Absolutely love this running shoes, exceeded all my expectations!",positive
+441,2025-02-14,review,"I'm so impressed with this coffee maker, it's a game changer.",positive
+442,2025-11-22,social_media,"can't believe they cancelled the show last minute, so disappointed",negative
+443,2025-05-03,review,"Great value, the desk chair performs better than I expected.",positive
+444,2025-06-15,review,"The air fryer is slow, unreliable, and constantly malfunctions.",negative
+445,2025-03-20,social_media,"heading to the grocery store, need to pick up a few things",neutral
+446,2025-02-27,review,"Super happy with my purchase, the keyboard is top notch.",positive
+447,2025-06-24,review,"Worst air fryer I've ever purchased, complete garbage.",negative
+448,2025-11-03,review,"The vacuum is okay, similar to other ones I've owned.",neutral
+449,2025-05-08,news,Quarterly report shows steady performance in line with expectations.,neutral
+450,2025-12-23,review,"Five stars, this jacket is fantastic and very well made.",positive
+451,2025-04-15,review,"The laptop arrived on schedule, packaging was standard.",neutral
+452,2025-10-15,review,"My air fryer works flawlessly, I use it every single day.",positive
+453,2025-10-22,social_media,"finally finished my project and it turned out amazing, so proud!!",positive
+454,2025-03-11,news,Annual conference scheduled to take place in the downtown venue.,neutral
+455,2025-04-17,review,"Waste of money, this mattress doesn't work as advertised.",negative
+456,2025-01-10,review,"Sure, it's cheap, but you absolutely get what you pay for with this blender.",negative
+457,2025-07-28,review,"Super happy with my purchase, the speaker is top notch.",positive
+458,2025-09-24,review,"Will definitely buy this tablet again, no complaints at all.",positive
+459,2025-07-08,review,"Extremely frustrated with this jacket, asking for a refund.",negative
+460,2025-06-01,news,"City unveils new park, residents excited about green space expansion.",positive
+461,2025-09-26,review,"It's not the worst blender out there, but I wouldn't buy it again.",negative
+462,2025-02-16,review,"My speaker works flawlessly, I use it every single day.",positive
+463,2025-09-19,review,"Five stars, this water bottle is fantastic and very well made.",positive
+464,2025-03-03,review,"Worst coffee maker I've ever purchased, complete garbage.",negative
+465,2025-07-13,review,"Horrible build quality, this mattress feels like a scam.",negative
+466,2025-10-08,review,"Sure, it's cheap, but you absolutely get what you pay for with this desk chair.",negative
+467,2025-02-04,review,I received the speaker yesterday and haven't tested it fully yet.,neutral
+468,2025-04-15,review,"Amazing quality for the price, highly recommend this keyboard.",positive
+469,2025-08-29,review,"Will definitely buy this phone case again, no complaints at all.",positive
+470,2025-06-07,review,"Terrible headphones, broke after just two days of use.",negative
+471,2025-10-16,social_media,"watching the game tonight, not sure who's going to win honestly",neutral
+472,2025-12-12,review,Customer service was wonderful and the smartwatch arrived early.,positive
+473,2025-06-30,review,"This phone case is functional, no major issues to report so far.",neutral
+474,2025-07-08,news,Local team celebrates championship win after incredible season.,positive
+475,2025-05-28,review,This jacket is cheaply made and fell apart immediately.,negative
+476,2025-04-24,review,"It's a keyboard, works as expected for the price point.",neutral
+477,2025-05-05,review,"Worst smartwatch I've ever purchased, complete garbage.",negative
+478,2025-11-26,review,The vacuum matches the description provided on the listing.,neutral
+479,2025-02-08,news,Economists warn of recession risk as unemployment numbers rise sharply.,negative
+480,2025-07-23,review,"I can't say I hate this webcam, but I definitely don't love it either.",neutral
+481,2025-08-22,review,"Will definitely buy this blender again, no complaints at all.",positive
+482,2025-10-29,review,"Amazing quality for the price, highly recommend this smartwatch.",positive
+483,2025-09-20,review,"It's a backpack, works as expected for the price point.",neutral
+484,2025-06-08,review,"I can't say I hate this keyboard, but I definitely don't love it either.",neutral
+485,2025-05-01,review,The smartwatch is overpriced and underperforms badly.,negative
+486,2025-07-23,review,"This vacuum made my life so much easier, thank you!",positive
+487,2025-01-07,review,"This keyboard made my life so much easier, thank you!",positive
+488,2025-08-17,news,Company faces backlash after massive data breach affects millions.,negative
+489,2025-08-24,review,"Amazing quality for the price, highly recommend this backpack.",positive
+490,2025-06-09,review,"It's a water bottle, works as expected for the price point.",neutral
+491,2025-06-24,review,"Do not buy this tablet, it stopped working within a week.",negative
+492,2025-05-02,review,"Sure, it's cheap, but you absolutely get what you pay for with this monitor.",negative
+493,2025-11-27,news,Officials criticized for slow response during the ongoing crisis.,negative
+494,2025-05-23,review,"Average running shoes, gets the job done but nothing special.",neutral
+495,2025-12-18,review,"Terrible jacket, broke after just two days of use.",negative
+496,2025-08-11,news,Company faces backlash after massive data breach affects millions.,negative
+497,2025-02-06,review,"I would not recommend this smartwatch to anyone, total disaster.",negative
+498,2025-09-02,review,"Terrible tablet, broke after just two days of use.",negative
+499,2025-08-03,review,The webcam matches the description provided on the listing.,neutral
+500,2025-07-27,news,Economists warn of recession risk as unemployment numbers rise sharply.,negative
+501,2025-03-27,review,"Best coffee maker I've ever bought, worth every penny.",positive
+502,2025-11-27,review,"This webcam does what it says, nothing more nothing less.",neutral
+503,2025-05-06,social_media,"got my package today, haven't opened it yet",neutral
+504,2025-11-27,review,"The speaker stopped functioning after one use, very disappointing.",negative
+505,2025-06-10,news,City council to vote on new zoning proposal next Tuesday afternoon.,neutral
+506,2025-04-01,review,I received the blender yesterday and haven't tested it fully yet.,neutral
+507,2025-04-30,review,This backpack is cheaply made and fell apart immediately.,negative
+508,2025-05-11,review,"Worst smartwatch I've ever purchased, complete garbage.",negative
+509,2025-05-26,social_media,"can't believe they cancelled the show last minute, so disappointed",negative
+510,2025-10-21,review,"I would not recommend this laptop to anyone, total disaster.",negative
+511,2025-11-24,review,The air fryer looks amazing but the performance leaves a lot to be desired.,negative
+512,2025-08-05,review,"Will definitely buy this water bottle again, no complaints at all.",positive
+513,2025-06-18,review,"Amazing quality for the price, highly recommend this vacuum.",positive
+514,2025-07-15,review,"This running shoes works perfectly, couldn't be happier.",positive
+515,2025-02-24,review,"Fast shipping and the running shoes is exactly as described, great experience.",positive
+516,2025-05-07,review,I received the phone case yesterday and haven't tested it fully yet.,neutral
+517,2025-08-24,review,"Fast shipping and the phone case is exactly as described, great experience.",positive
+518,2025-02-05,review,"Will definitely buy this headphones again, no complaints at all.",positive
+519,2025-04-12,review,"Absolutely love this mattress, exceeded all my expectations!",positive
+520,2025-08-31,review,"Amazing quality for the price, highly recommend this webcam.",positive
+521,2025-08-19,review,"The phone case ships in a basic box, no special packaging.",neutral
+522,2025-06-10,review,"Five stars, this router is fantastic and very well made.",positive
+523,2025-11-17,social_media,"ordered food an hour ago and it still hasn't arrived, ridiculous",negative
+524,2025-03-04,news,Annual conference scheduled to take place in the downtown venue.,neutral
+525,2025-11-05,news,"City unveils new park, residents excited about green space expansion.",positive
+526,2025-12-25,review,"I would not recommend this smartwatch to anyone, total disaster.",negative
+527,2025-04-10,review,"Five stars, this jacket is fantastic and very well made.",positive
+528,2025-11-29,news,City council to vote on new zoning proposal next Tuesday afternoon.,neutral
+529,2025-11-18,social_media,"trying out a new recipe tonight, we'll see how it goes",neutral
+530,2025-02-20,review,"I would not recommend this router to anyone, total disaster.",negative
+531,2025-10-21,social_media,"had the best weekend with my friends, feeling so grateful right now",positive
+532,2025-08-12,review,"Not bad, but definitely not the best desk chair I've used either.",neutral
+533,2025-02-14,review,"This mattress made my life so much easier, thank you!",positive
+534,2025-08-13,review,"The monitor is slow, unreliable, and constantly malfunctions.",negative
+535,2025-02-07,social_media,"got my package today, haven't opened it yet",neutral
+536,2025-08-29,review,"Terrible headphones, broke after just two days of use.",negative
+537,2025-07-23,social_media,"this playlist is literally perfect for studying, 10/10 recommend",positive
+538,2025-10-03,review,"Fast shipping and the water bottle is exactly as described, great experience.",positive
+539,2025-10-17,review,"Great value, the running shoes performs better than I expected.",positive
+540,2025-01-20,review,"I bought this smartwatch to replace an older model, seems similar.",neutral
+541,2025-08-04,review,"Absolutely love this backpack, exceeded all my expectations!",positive
+542,2025-05-20,news,"Company reports record quarterly profits, stock surges on strong earnings.",positive
+543,2025-08-02,review,"It's not the worst jacket out there, but I wouldn't buy it again.",negative
+544,2025-11-07,review,"Horrible build quality, this phone case feels like a scam.",negative
+545,2025-11-15,review,"Awful experience, the router was nothing like the pictures.",negative
+546,2025-12-30,review,"This vacuum is functional, no major issues to report so far.",neutral
+547,2025-08-18,review,"This jacket is functional, no major issues to report so far.",neutral
+548,2025-05-07,review,"Best jacket I've ever bought, worth every penny.",positive
+549,2025-05-20,review,"Fast shipping and the coffee maker is exactly as described, great experience.",positive
+550,2025-03-26,review,"Awful experience, the tablet was nothing like the pictures.",negative
+551,2025-04-12,review,"Fast shipping and the coffee maker is exactly as described, great experience.",positive
+552,2025-02-16,review,I received the laptop yesterday and haven't tested it fully yet.,neutral
+553,2025-02-12,review,"Yeah, this monitor is 'great' if you enjoy waiting three weeks for a refund.",negative
+554,2025-08-06,review,"Horrible build quality, this backpack feels like a scam.",negative
+555,2025-12-14,news,Factory shutdown leaves hundreds of workers without jobs this week.,negative
+556,2025-04-03,news,Breakthrough treatment shows promising results in clinical trials.,positive
+557,2025-02-10,news,Local team celebrates championship win after incredible season.,positive
+558,2025-01-15,social_media,"watching the game tonight, not sure who's going to win honestly",neutral
+559,2025-02-05,review,"The desk chair stopped functioning after one use, very disappointing.",negative
+560,2025-07-10,review,"Yeah, this speaker is 'great' if you enjoy waiting three weeks for a refund.",negative
+561,2025-12-31,review,"This mattress is functional, no major issues to report so far.",neutral
+562,2025-08-03,review,"Do not buy this mattress, it stopped working within a week.",negative
+563,2025-06-11,review,"Amazing quality for the price, highly recommend this phone case.",positive
+564,2025-01-23,review,"The smartwatch ships in a basic box, no special packaging.",neutral
+565,2025-08-03,review,"Beautifully designed mattress, looks even better in person.",positive
+566,2025-06-10,review,"Average air fryer, gets the job done but nothing special.",neutral
+567,2025-01-22,social_media,"watching the game tonight, not sure who's going to win honestly",neutral
+568,2025-07-25,review,"Waste of money, this blender doesn't work as advertised.",negative
+569,2025-07-15,review,"Waste of money, this coffee maker doesn't work as advertised.",negative
+570,2025-02-18,review,"The air fryer has standard features, comparable to competitors.",neutral
+571,2025-07-08,social_media,"had the best weekend with my friends, feeling so grateful right now",positive
+572,2025-08-28,review,The running shoes is overpriced and underperforms badly.,negative
+573,2025-03-13,review,"My smartwatch works flawlessly, I use it every single day.",positive
+574,2025-01-14,review,"Just an update: the mattress is still being used, no new feedback.",neutral
+575,2025-07-11,review,"I wanted to love this blender, but the battery life ruined it for me.",negative
+576,2025-08-26,review,"This webcam works perfectly, couldn't be happier.",positive
+577,2025-10-23,review,"Best vacuum I've ever bought, worth every penny.",positive
+578,2025-08-01,review,This desk chair is cheaply made and fell apart immediately.,negative
+579,2025-10-19,review,"Horrible build quality, this smartwatch feels like a scam.",negative
+580,2025-03-21,review,"Beautifully designed speaker, looks even better in person.",positive
+581,2025-11-25,social_media,"trying out a new recipe tonight, we'll see how it goes",neutral
+582,2025-11-29,review,"I'm so impressed with this coffee maker, it's a game changer.",positive
+583,2025-11-30,social_media,rescheduled my appointment to next week instead of this friday,neutral
+584,2025-04-08,review,"Very disappointed with this vacuum, poor quality overall.",negative
+585,2025-08-14,review,"Average jacket, gets the job done but nothing special.",neutral
+586,2025-05-09,review,"Yeah, this desk chair is 'great' if you enjoy waiting three weeks for a refund.",negative
+587,2025-06-02,review,The smartwatch is overpriced and underperforms badly.,negative
+588,2025-04-21,review,"Fast shipping and the desk chair is exactly as described, great experience.",positive
+589,2025-07-06,news,Economists warn of recession risk as unemployment numbers rise sharply.,negative
+590,2025-01-23,review,"The backpack has flaws, sure, but overall I'm genuinely satisfied with it.",positive
+591,2025-05-03,review,The phone case looks amazing but the performance leaves a lot to be desired.,negative
+592,2025-11-01,review,"My mattress works flawlessly, I use it every single day.",positive
+593,2025-08-17,review,"Will definitely buy this mattress again, no complaints at all.",positive
+594,2025-08-17,news,"New regulations to take effect starting next month, officials confirm.",neutral
+595,2025-01-29,review,"Terrible keyboard, broke after just two days of use.",negative
+596,2025-06-17,review,"It's a monitor, works as expected for the price point.",neutral
+597,2025-01-15,review,"Very disappointed with this monitor, poor quality overall.",negative
+598,2025-03-07,review,"Super happy with my purchase, the desk chair is top notch.",positive
+599,2025-10-18,review,"It's a keyboard, works as expected for the price point.",neutral
+600,2025-05-05,review,"Great value, the speaker performs better than I expected.",positive
+601,2025-07-08,news,"Company reports record quarterly profits, stock surges on strong earnings.",positive
+602,2025-07-08,review,"Waste of money, this smartwatch doesn't work as advertised.",negative
+603,2025-09-12,review,"Extremely frustrated with this coffee maker, asking for a refund.",negative
+604,2025-02-05,review,"Terrible water bottle, broke after just two days of use.",negative
+605,2025-12-23,review,"The smartwatch has flaws, sure, but overall I'm genuinely satisfied with it.",positive
+606,2025-12-04,review,"Super happy with my purchase, the headphones is top notch.",positive
+607,2025-03-12,news,City council to vote on new zoning proposal next Tuesday afternoon.,neutral
+608,2025-04-19,review,"Very disappointed with this speaker, poor quality overall.",negative
+609,2025-03-22,review,"My webcam works flawlessly, I use it every single day.",positive
+610,2025-01-15,review,"This tablet is functional, no major issues to report so far.",neutral
+611,2025-12-30,news,Department releases updated guidelines for upcoming fiscal year.,neutral
+612,2025-03-08,social_media,"this playlist is literally perfect for studying, 10/10 recommend",positive
+613,2025-02-26,review,"Horrible build quality, this headphones feels like a scam.",negative
+614,2025-05-04,review,The mattress is overpriced and underperforms badly.,negative
+615,2025-10-10,review,The smartwatch arrived damaged and customer service was unhelpful.,negative
+616,2025-05-23,review,"Awful experience, the smartwatch was nothing like the pictures.",negative
+617,2025-09-15,review,"Terrible desk chair, broke after just two days of use.",negative
+618,2025-06-18,review,"Waste of money, this headphones doesn't work as advertised.",negative
+619,2025-08-21,review,"The keyboard has standard features, comparable to competitors.",neutral
+620,2025-02-09,review,"The smartwatch arrived on schedule, packaging was standard.",neutral
+621,2025-02-09,news,Stock prices plummet after disappointing earnings report released.,negative
+622,2025-02-11,review,"Absolutely love this webcam, exceeded all my expectations!",positive
+623,2025-01-02,review,"This vacuum works perfectly, couldn't be happier.",positive
+624,2025-12-12,review,"Waste of money, this keyboard doesn't work as advertised.",negative
+625,2025-05-12,review,"This desk chair does what it says, nothing more nothing less.",neutral
+626,2025-06-05,review,"My laptop works flawlessly, I use it every single day.",positive
+627,2025-09-10,social_media,"had the best weekend with my friends, feeling so grateful right now",positive
+628,2025-07-11,review,"I wanted to love this webcam, but the battery life ruined it for me.",negative
+629,2025-05-17,review,"The mattress is durable, stylish, and works great.",positive
+630,2025-11-08,review,"The blender is durable, stylish, and works great.",positive
+631,2025-10-18,review,"Absolutely love this coffee maker, exceeded all my expectations!",positive
+632,2025-05-17,news,Local team celebrates championship win after incredible season.,positive
+633,2025-03-22,social_media,just tried the new coffee shop downtown and im obsessed!! best latte ever,positive
+634,2025-11-26,review,"Just an update: the jacket is still being used, no new feedback.",neutral
+635,2025-06-01,review,"I would not recommend this backpack to anyone, total disaster.",negative
+636,2025-08-01,review,"The tablet stopped functioning after one use, very disappointing.",negative
+637,2025-01-14,review,This tablet is cheaply made and fell apart immediately.,negative
+638,2025-12-21,news,New policy praised by experts for boosting economic growth significantly.,positive
+639,2025-07-30,review,"This keyboard works perfectly, couldn't be happier.",positive
+640,2025-08-04,review,"This backpack works perfectly, couldn't be happier.",positive
+641,2025-04-04,review,"Will definitely buy this smartwatch again, no complaints at all.",positive
+642,2025-06-06,news,"City unveils new park, residents excited about green space expansion.",positive
+643,2025-10-10,social_media,"this playlist is literally perfect for studying, 10/10 recommend",positive
+644,2025-04-01,review,"Will definitely buy this headphones again, no complaints at all.",positive
+645,2025-10-03,review,"Best blender I've ever bought, worth every penny.",positive
+646,2025-06-05,review,"Very disappointed with this jacket, poor quality overall.",negative
+647,2025-06-17,news,Breakthrough treatment shows promising results in clinical trials.,positive
+648,2025-12-08,review,"This smartwatch works perfectly, couldn't be happier.",positive
+649,2025-08-21,review,"Five stars, this tablet is fantastic and very well made.",positive
+650,2025-03-05,review,"Yeah, this webcam is 'great' if you enjoy waiting three weeks for a refund.",negative
+651,2025-08-09,review,The water bottle matches the description provided on the listing.,neutral
+652,2025-05-02,social_media,"had the best weekend with my friends, feeling so grateful right now",positive
+653,2025-08-01,review,"My smartwatch works flawlessly, I use it every single day.",positive
+654,2025-11-25,social_media,"stuck in traffic for two hours and now im late, worst monday ever",negative
+655,2025-06-03,review,"I'm so impressed with this running shoes, it's a game changer.",positive
+656,2025-09-22,social_media,"stuck in traffic for two hours and now im late, worst monday ever",negative
+657,2025-01-11,review,"This mattress isn't perfect, but it's good enough for casual use.",neutral
+658,2025-09-21,review,"Best monitor I've ever bought, worth every penny.",positive
+659,2025-12-13,review,"Horrible build quality, this coffee maker feels like a scam.",negative
+660,2025-06-08,review,"Waste of money, this phone case doesn't work as advertised.",negative
+661,2025-03-06,social_media,"ordered food an hour ago and it still hasn't arrived, ridiculous",negative
+662,2025-10-11,social_media,"had the best weekend with my friends, feeling so grateful right now",positive
+663,2025-03-20,news,Stock prices plummet after disappointing earnings report released.,negative
+664,2025-10-06,review,"Extremely frustrated with this router, asking for a refund.",negative
+665,2025-12-15,review,"My laptop works flawlessly, I use it every single day.",positive
+666,2025-07-14,review,"I would not recommend this mattress to anyone, total disaster.",negative
+667,2025-10-09,review,"Extremely frustrated with this vacuum, asking for a refund.",negative
+668,2025-01-27,review,"Average air fryer, gets the job done but nothing special.",neutral
+669,2025-11-05,review,"My mattress works flawlessly, I use it every single day.",positive
+670,2025-02-16,review,"Waste of money, this smartwatch doesn't work as advertised.",negative
+671,2025-05-05,review,"The running shoes has standard features, comparable to competitors.",neutral
+672,2025-10-20,review,"The coffee maker stopped functioning after one use, very disappointing.",negative
+673,2025-06-04,review,"Worst smartwatch I've ever purchased, complete garbage.",negative
+674,2025-07-11,review,"Just an update: the tablet is still being used, no new feedback.",neutral
+675,2025-01-09,review,"Honestly didn't expect much, and somehow this mattress still disappointed me.",negative
+676,2025-06-15,review,"Do not buy this tablet, it stopped working within a week.",negative
+677,2025-06-07,review,"This phone case works perfectly, couldn't be happier.",positive
+678,2025-06-27,social_media,"can't believe they cancelled the show last minute, so disappointed",negative
+679,2025-02-28,news,Quarterly report shows steady performance in line with expectations.,neutral
+680,2025-10-01,review,"This headphones made my life so much easier, thank you!",positive
+681,2025-11-24,news,Company faces backlash after massive data breach affects millions.,negative
+682,2025-03-26,review,"I'm so impressed with this vacuum, it's a game changer.",positive
+683,2025-06-04,social_media,"trying out a new recipe tonight, we'll see how it goes",neutral
+684,2025-04-26,social_media,"can't believe they cancelled the show last minute, so disappointed",negative
+685,2025-09-23,social_media,"just lost my favorite sweater at the gym, today is not my day",negative
+686,2025-03-02,review,"Waste of money, this coffee maker doesn't work as advertised.",negative
+687,2025-02-17,review,"The webcam ships in a basic box, no special packaging.",neutral
+688,2025-09-15,social_media,why does my wifi keep dropping every five minutes this is so annoying,negative
+689,2025-10-15,news,Quarterly report shows steady performance in line with expectations.,neutral
+690,2025-05-03,review,"Terrible water bottle, broke after just two days of use.",negative
+691,2025-08-01,review,"This smartwatch is functional, no major issues to report so far.",neutral
+692,2025-03-06,review,I received the blender yesterday and haven't tested it fully yet.,neutral
+693,2025-03-25,review,"Beautifully designed coffee maker, looks even better in person.",positive
+694,2025-01-15,review,"I wanted to love this coffee maker, but the battery life ruined it for me.",negative
+695,2025-11-16,social_media,"watching the game tonight, not sure who's going to win honestly",neutral
+696,2025-09-14,review,"I regret buying this tablet, total waste of time and money.",negative
+697,2025-03-26,social_media,"just lost my favorite sweater at the gym, today is not my day",negative
+698,2025-12-02,news,"Company reports record quarterly profits, stock surges on strong earnings.",positive
+699,2025-12-16,review,"Beautifully designed running shoes, looks even better in person.",positive
+700,2025-08-20,review,"This running shoes is functional, no major issues to report so far.",neutral
+701,2025-06-11,review,"Amazing quality for the price, highly recommend this jacket.",positive
+702,2025-08-19,review,I received the phone case yesterday and haven't tested it fully yet.,neutral
+703,2025-04-28,review,"Great value, the mattress performs better than I expected.",positive
+704,2025-02-22,review,"Super happy with my purchase, the keyboard is top notch.",positive
+705,2025-04-21,review,"Sure, it's cheap, but you absolutely get what you pay for with this tablet.",negative
+706,2025-11-08,review,"Fast shipping and the webcam is exactly as described, great experience.",positive
+707,2025-08-08,review,"Average jacket, gets the job done but nothing special.",neutral
+708,2025-08-03,review,"Fast shipping and the vacuum is exactly as described, great experience.",positive
+709,2025-06-05,social_media,"just lost my favorite sweater at the gym, today is not my day",negative
+710,2025-04-13,news,Annual conference scheduled to take place in the downtown venue.,neutral
+711,2025-06-23,review,The tablet is overpriced and underperforms badly.,negative
+712,2025-08-21,review,"Very disappointed with this vacuum, poor quality overall.",negative
+713,2025-08-27,review,"This keyboard made my life so much easier, thank you!",positive
+714,2025-09-13,review,"Waste of money, this desk chair doesn't work as advertised.",negative
+715,2025-07-17,review,"The vacuum stopped functioning after one use, very disappointing.",negative
+716,2025-11-05,review,"The headphones is okay, similar to other ones I've owned.",neutral
+717,2025-02-26,review,"Super happy with my purchase, the phone case is top notch.",positive
+718,2025-02-01,review,"The router is slow, unreliable, and constantly malfunctions.",negative
+719,2025-01-20,review,"This desk chair isn't terrible, it just isn't great.",neutral
+720,2025-08-21,review,"Five stars, this tablet is fantastic and very well made.",positive
+721,2025-08-16,news,"City unveils new park, residents excited about green space expansion.",positive
+722,2025-04-24,review,"Do not buy this water bottle, it stopped working within a week.",negative
+723,2025-04-22,review,"Best jacket I've ever bought, worth every penny.",positive
+724,2025-08-09,review,"This router does what it says, nothing more nothing less.",neutral
+725,2025-07-07,news,Officials criticized for slow response during the ongoing crisis.,negative
+726,2025-07-29,social_media,"finally finished my project and it turned out amazing, so proud!!",positive
+727,2025-01-11,review,"Extremely frustrated with this water bottle, asking for a refund.",negative
+728,2025-03-15,review,"The headphones arrived on schedule, packaging was standard.",neutral
+729,2025-08-21,review,"I'm so impressed with this backpack, it's a game changer.",positive
+730,2025-03-09,review,"Fast shipping and the vacuum is exactly as described, great experience.",positive
+731,2025-01-11,review,"This vacuum does what it says, nothing more nothing less.",neutral
+732,2025-03-10,review,"Wow, never thought a keyboard could make me this happy, incredible find.",positive
+733,2025-08-08,review,"Honestly didn't expect much, and somehow this monitor still disappointed me.",negative
+734,2025-03-17,review,"Five stars, this coffee maker is fantastic and very well made.",positive
+735,2025-03-26,review,"The water bottle ships in a basic box, no special packaging.",neutral
+736,2025-01-23,review,"Amazing quality for the price, highly recommend this tablet.",positive
+737,2025-11-05,news,Local team celebrates championship win after incredible season.,positive
+738,2025-03-06,news,Factory shutdown leaves hundreds of workers without jobs this week.,negative
+739,2025-01-13,review,"This running shoes made my life so much easier, thank you!",positive
+740,2025-02-02,review,"This backpack works perfectly, couldn't be happier.",positive
+741,2025-02-10,social_media,"can't believe they cancelled the show last minute, so disappointed",negative
+742,2025-08-29,review,"Will definitely buy this blender again, no complaints at all.",positive
+743,2025-08-30,review,"Extremely frustrated with this coffee maker, asking for a refund.",negative
+744,2025-10-05,review,"Absolutely love this jacket, exceeded all my expectations!",positive
+745,2025-03-29,review,"Extremely frustrated with this headphones, asking for a refund.",negative
+746,2025-10-25,review,"Wow, never thought a running shoes could make me this happy, incredible find.",positive
+747,2025-04-22,review,"Absolutely love this blender, exceeded all my expectations!",positive
+748,2025-10-24,review,"Fast shipping and the running shoes is exactly as described, great experience.",positive
+749,2025-03-24,social_media,"just lost my favorite sweater at the gym, today is not my day",negative
+750,2025-11-23,review,"Worst desk chair I've ever purchased, complete garbage.",negative
+751,2025-03-19,review,"Just an update: the keyboard is still being used, no new feedback.",neutral
+752,2025-09-23,news,Local team celebrates championship win after incredible season.,positive
+753,2025-07-11,review,"Amazing quality for the price, highly recommend this desk chair.",positive
+754,2025-02-06,review,"I would not recommend this desk chair to anyone, total disaster.",negative
+755,2025-02-02,review,"Five stars, this water bottle is fantastic and very well made.",positive
+756,2025-04-13,social_media,"can't believe how good this movie was, definitely watching it again",positive
+757,2025-06-11,review,"The backpack stopped functioning after one use, very disappointing.",negative
+758,2025-01-16,news,Factory shutdown leaves hundreds of workers without jobs this week.,negative
+759,2025-04-09,review,"Average speaker, gets the job done but nothing special.",neutral
+760,2025-12-26,review,"Worst water bottle I've ever purchased, complete garbage.",negative
+761,2025-11-10,social_media,"this playlist is literally perfect for studying, 10/10 recommend",positive
+762,2025-08-07,news,"City unveils new park, residents excited about green space expansion.",positive
+763,2025-11-10,news,"New regulations to take effect starting next month, officials confirm.",neutral
+764,2025-02-26,review,"Sure, it's cheap, but you absolutely get what you pay for with this air fryer.",negative
+765,2025-10-11,review,"Terrible phone case, broke after just two days of use.",negative
+766,2025-11-06,social_media,"watching the game tonight, not sure who's going to win honestly",neutral
+767,2025-05-27,review,"I can't say I hate this backpack, but I definitely don't love it either.",neutral
+768,2025-12-04,social_media,"heading to the grocery store, need to pick up a few things",neutral
+769,2025-09-09,news,Annual conference scheduled to take place in the downtown venue.,neutral
+770,2025-04-06,news,New policy praised by experts for boosting economic growth significantly.,positive
+771,2025-06-19,news,"Company reports record quarterly profits, stock surges on strong earnings.",positive
+772,2025-06-01,review,"Worst speaker I've ever purchased, complete garbage.",negative
+773,2025-10-05,social_media,just tried the new coffee shop downtown and im obsessed!! best latte ever,positive
+774,2025-02-28,review,"The keyboard stopped functioning after one use, very disappointing.",negative
+775,2025-08-25,review,"I would not recommend this running shoes to anyone, total disaster.",negative
+776,2025-07-13,review,"My running shoes works flawlessly, I use it every single day.",positive
+777,2025-12-14,news,Economists warn of recession risk as unemployment numbers rise sharply.,negative
+778,2025-07-24,review,"The jacket is durable, stylish, and works great.",positive
+779,2025-12-31,social_media,just tried the new coffee shop downtown and im obsessed!! best latte ever,positive
+780,2025-06-26,social_media,"stuck in traffic for two hours and now im late, worst monday ever",negative
+781,2025-03-13,social_media,"had the best weekend with my friends, feeling so grateful right now",positive
+782,2025-12-19,social_media,"got my package today, haven't opened it yet",neutral
+783,2025-08-07,review,"I bought this vacuum to replace an older model, seems similar.",neutral
+784,2025-04-26,review,"Best coffee maker I've ever bought, worth every penny.",positive
+785,2025-01-27,review,Customer service was wonderful and the tablet arrived early.,positive
+786,2025-09-23,social_media,"can't believe they cancelled the show last minute, so disappointed",negative
+787,2025-02-09,review,"Average headphones, gets the job done but nothing special.",neutral
+788,2025-05-14,news,"New regulations to take effect starting next month, officials confirm.",neutral
+789,2025-05-01,news,Officials criticized for slow response during the ongoing crisis.,negative
+790,2025-09-23,news,Quarterly report shows steady performance in line with expectations.,neutral
+791,2025-07-03,review,"I'm so impressed with this phone case, it's a game changer.",positive
+792,2025-04-23,review,"The mattress is durable, stylish, and works great.",positive
+793,2025-11-06,review,"I'm so impressed with this router, it's a game changer.",positive
+794,2025-02-07,review,"Awful experience, the headphones was nothing like the pictures.",negative
+795,2025-05-09,review,"Very disappointed with this mattress, poor quality overall.",negative
+796,2025-10-13,review,"Average running shoes, gets the job done but nothing special.",neutral
+797,2025-09-01,review,"This blender does what it says, nothing more nothing less.",neutral
+798,2025-01-16,social_media,"trying out a new recipe tonight, we'll see how it goes",neutral
+799,2025-08-31,review,"Terrible keyboard, broke after just two days of use.",negative
+800,2025-04-24,review,"Not bad, but definitely not the best blender I've used either.",neutral
+801,2025-11-18,review,"Worst desk chair I've ever purchased, complete garbage.",negative
+802,2025-11-11,news,Company faces backlash after massive data breach affects millions.,negative
+803,2025-02-03,review,"Five stars, this tablet is fantastic and very well made.",positive
+804,2025-12-22,review,"Amazing quality for the price, highly recommend this vacuum.",positive
+805,2025-11-02,review,"Absolutely love this running shoes, exceeded all my expectations!",positive
+806,2025-10-31,review,"The vacuum is durable, stylish, and works great.",positive
+807,2025-02-17,review,"This blender does what it says, nothing more nothing less.",neutral
+808,2025-04-26,review,"Waste of money, this mattress doesn't work as advertised.",negative
+809,2025-05-02,review,"Beautifully designed desk chair, looks even better in person.",positive
+810,2025-08-28,social_media,"this playlist is literally perfect for studying, 10/10 recommend",positive
+811,2025-05-31,news,Breakthrough treatment shows promising results in clinical trials.,positive
+812,2025-12-17,social_media,"got my package today, haven't opened it yet",neutral
+813,2025-04-25,social_media,"can't believe how good this movie was, definitely watching it again",positive
+814,2025-09-20,review,"I bought this router to replace an older model, seems similar.",neutral
+815,2025-10-23,social_media,rescheduled my appointment to next week instead of this friday,neutral
+816,2025-11-13,review,I received the headphones yesterday and haven't tested it fully yet.,neutral
+817,2025-08-07,review,"Will definitely buy this webcam again, no complaints at all.",positive
+818,2025-04-23,review,"Super happy with my purchase, the air fryer is top notch.",positive
+819,2025-05-03,review,"The monitor is durable, stylish, and works great.",positive
+820,2025-03-23,review,"Fast shipping and the laptop is exactly as described, great experience.",positive
+821,2025-10-28,social_media,why does my wifi keep dropping every five minutes this is so annoying,negative
+822,2025-06-29,review,"Just an update: the desk chair is still being used, no new feedback.",neutral
+823,2025-04-18,social_media,rescheduled my appointment to next week instead of this friday,neutral
+824,2025-12-18,review,"My mattress works flawlessly, I use it every single day.",positive
+825,2025-01-16,review,"Best phone case I've ever bought, worth every penny.",positive
+826,2025-10-11,review,"I bought this jacket to replace an older model, seems similar.",neutral
+827,2025-11-11,review,"This blender does what it says, nothing more nothing less.",neutral
+828,2025-07-07,news,City council to vote on new zoning proposal next Tuesday afternoon.,neutral
+829,2025-10-22,review,"Absolutely love this monitor, exceeded all my expectations!",positive
+830,2025-09-04,review,"Five stars, this speaker is fantastic and very well made.",positive
+831,2025-05-23,review,"Fast shipping and the blender is exactly as described, great experience.",positive
+832,2025-05-29,review,"Just an update: the air fryer is still being used, no new feedback.",neutral
+833,2025-02-22,review,"I would not recommend this speaker to anyone, total disaster.",negative
+834,2025-12-05,news,Breakthrough treatment shows promising results in clinical trials.,positive
+835,2025-11-02,review,"Average vacuum, gets the job done but nothing special.",neutral
+836,2025-03-05,social_media,"just lost my favorite sweater at the gym, today is not my day",negative
+837,2025-08-01,review,"Not bad, but definitely not the best laptop I've used either.",neutral
+838,2025-05-03,review,"The mattress is okay, similar to other ones I've owned.",neutral
+839,2025-05-27,review,"The speaker stopped functioning after one use, very disappointing.",negative
+840,2025-11-24,social_media,why does my wifi keep dropping every five minutes this is so annoying,negative
+841,2025-02-15,review,"Terrible smartwatch, broke after just two days of use.",negative
+842,2025-08-15,review,"Fast shipping and the headphones is exactly as described, great experience.",positive
+843,2025-07-29,review,The router is overpriced and underperforms badly.,negative
+844,2025-06-28,review,"Not bad, but definitely not the best smartwatch I've used either.",neutral
+845,2025-11-23,social_media,"can't believe how good this movie was, definitely watching it again",positive
+846,2025-08-19,social_media,"stuck in traffic for two hours and now im late, worst monday ever",negative
+847,2025-01-22,news,Company faces backlash after massive data breach affects millions.,negative
+848,2025-03-19,review,"Extremely frustrated with this phone case, asking for a refund.",negative
+849,2025-10-11,review,"Beautifully designed monitor, looks even better in person.",positive
+850,2025-02-22,review,"Yeah, this mattress is 'great' if you enjoy waiting three weeks for a refund.",negative
+851,2025-12-01,review,"Fast shipping and the water bottle is exactly as described, great experience.",positive
+852,2025-07-05,review,"Average laptop, gets the job done but nothing special.",neutral
+853,2025-08-17,news,"City unveils new park, residents excited about green space expansion.",positive
+854,2025-07-10,news,Stock prices plummet after disappointing earnings report released.,negative
+855,2025-10-17,review,"This jacket made my life so much easier, thank you!",positive
+856,2025-05-16,social_media,rescheduled my appointment to next week instead of this friday,neutral
+857,2025-03-15,review,"The smartwatch is durable, stylish, and works great.",positive
+858,2025-06-27,news,Department releases updated guidelines for upcoming fiscal year.,neutral
+859,2025-04-16,review,"Very disappointed with this jacket, poor quality overall.",negative
+860,2025-02-07,social_media,"stuck in traffic for two hours and now im late, worst monday ever",negative
+861,2025-12-26,review,"Worst monitor I've ever purchased, complete garbage.",negative
+862,2025-03-02,news,"New regulations to take effect starting next month, officials confirm.",neutral
+863,2025-10-20,review,"My desk chair works flawlessly, I use it every single day.",positive
+864,2025-03-19,review,"Best desk chair I've ever bought, worth every penny.",positive
+865,2025-07-05,review,"Will definitely buy this water bottle again, no complaints at all.",positive
+866,2025-12-20,review,"Amazing quality for the price, highly recommend this mattress.",positive
+867,2025-04-27,review,The monitor arrived damaged and customer service was unhelpful.,negative
+868,2025-08-20,review,"The webcam is durable, stylish, and works great.",positive
+869,2025-06-09,review,"The headphones stopped functioning after one use, very disappointing.",negative
+870,2025-09-18,review,"The monitor is slow, unreliable, and constantly malfunctions.",negative
+871,2025-01-18,review,"Horrible build quality, this smartwatch feels like a scam.",negative
+872,2025-02-22,review,"Great value, the coffee maker performs better than I expected.",positive
+873,2025-10-03,review,"Beautifully designed mattress, looks even better in person.",positive
+874,2025-11-14,review,"I would not recommend this vacuum to anyone, total disaster.",negative
+875,2025-05-17,review,"Super happy with my purchase, the coffee maker is top notch.",positive
+876,2025-09-02,review,"Absolutely love this jacket, exceeded all my expectations!",positive
+877,2025-12-20,review,"Waste of money, this mattress doesn't work as advertised.",negative
+878,2025-10-10,social_media,"ordered food an hour ago and it still hasn't arrived, ridiculous",negative
+879,2025-11-02,review,"Five stars, this vacuum is fantastic and very well made.",positive
+880,2025-06-04,review,"The webcam arrived on schedule, packaging was standard.",neutral
+881,2025-05-31,review,"Best mattress I've ever bought, worth every penny.",positive
+882,2025-03-12,review,"I'm so impressed with this coffee maker, it's a game changer.",positive
+883,2025-12-29,review,"This smartwatch made my life so much easier, thank you!",positive
+884,2025-05-21,review,"I would not recommend this vacuum to anyone, total disaster.",negative
+885,2025-12-11,review,"Will definitely buy this phone case again, no complaints at all.",positive
+886,2025-11-30,review,"Beautifully designed webcam, looks even better in person.",positive
+887,2025-06-03,social_media,just tried the new coffee shop downtown and im obsessed!! best latte ever,positive
+888,2025-08-18,review,"This speaker isn't terrible, it just isn't great.",neutral
+889,2025-12-12,review,"Great value, the blender performs better than I expected.",positive
+890,2025-08-08,review,"I would not recommend this jacket to anyone, total disaster.",negative
+891,2025-02-15,review,"I bought this router to replace an older model, seems similar.",neutral
+892,2025-10-02,review,"Terrible tablet, broke after just two days of use.",negative
+893,2025-03-05,news,"Company reports record quarterly profits, stock surges on strong earnings.",positive
+894,2025-12-27,review,"Will definitely buy this mattress again, no complaints at all.",positive
+895,2025-05-06,review,"Beautifully designed tablet, looks even better in person.",positive
+896,2025-08-29,review,"This vacuum isn't perfect, but it's good enough for casual use.",neutral
+897,2025-06-19,review,"Five stars, this air fryer is fantastic and very well made.",positive
+898,2025-11-11,review,"Honestly didn't expect much, and somehow this laptop still disappointed me.",negative
+899,2025-12-08,news,Department releases updated guidelines for upcoming fiscal year.,neutral
+900,2025-12-07,review,"It's not the worst headphones out there, but I wouldn't buy it again.",negative
+901,2025-12-08,review,"My laptop works flawlessly, I use it every single day.",positive
+902,2025-09-12,news,New policy praised by experts for boosting economic growth significantly.,positive
+903,2025-05-10,review,"Fast shipping and the air fryer is exactly as described, great experience.",positive
+904,2025-06-16,review,"Terrible speaker, broke after just two days of use.",negative
+905,2025-11-02,review,"Do not buy this desk chair, it stopped working within a week.",negative
+906,2025-03-04,review,The monitor looks amazing but the performance leaves a lot to be desired.,negative
+907,2025-07-29,review,"Very disappointed with this laptop, poor quality overall.",negative
+908,2025-09-05,review,The vacuum arrived damaged and customer service was unhelpful.,negative
+909,2025-02-08,review,"Beautifully designed backpack, looks even better in person.",positive
+910,2025-05-22,review,"Best air fryer I've ever bought, worth every penny.",positive
+911,2025-07-14,review,"Absolutely love this tablet, exceeded all my expectations!",positive
+912,2025-01-14,news,Quarterly report shows steady performance in line with expectations.,neutral
+913,2025-12-26,review,"This tablet made my life so much easier, thank you!",positive
+914,2025-10-22,review,This router is cheaply made and fell apart immediately.,negative
+915,2025-11-06,review,"Fast shipping and the monitor is exactly as described, great experience.",positive
+916,2025-12-10,review,"Do not buy this keyboard, it stopped working within a week.",negative
+917,2025-08-28,review,"Five stars, this air fryer is fantastic and very well made.",positive
+918,2025-06-13,news,Department releases updated guidelines for upcoming fiscal year.,neutral
+919,2025-02-21,review,"Will definitely buy this coffee maker again, no complaints at all.",positive
+920,2025-09-14,review,"This speaker is functional, no major issues to report so far.",neutral
+921,2025-01-04,review,"Great value, the coffee maker performs better than I expected.",positive
+922,2025-10-16,review,Customer service was wonderful and the water bottle arrived early.,positive
+923,2025-05-04,review,"Wow, never thought a router could make me this happy, incredible find.",positive
+924,2025-02-12,review,"Great value, the laptop performs better than I expected.",positive
+925,2025-12-03,review,"I would not recommend this laptop to anyone, total disaster.",negative
+926,2025-08-23,review,The water bottle looks amazing but the performance leaves a lot to be desired.,negative
+927,2025-07-14,review,"Horrible build quality, this webcam feels like a scam.",negative
+928,2025-11-13,review,"Average headphones, gets the job done but nothing special.",neutral
+929,2025-09-20,review,"Not bad, but definitely not the best smartwatch I've used either.",neutral
+930,2025-09-27,review,I received the air fryer yesterday and haven't tested it fully yet.,neutral
+931,2025-02-21,review,"I would not recommend this smartwatch to anyone, total disaster.",negative
+932,2025-06-02,social_media,"got my package today, haven't opened it yet",neutral
+933,2025-06-19,review,"Best phone case I've ever bought, worth every penny.",positive
+934,2025-02-25,review,"I regret buying this router, total waste of time and money.",negative
+935,2025-07-14,review,"Absolutely love this jacket, exceeded all my expectations!",positive
+936,2025-05-02,review,"The router arrived on schedule, packaging was standard.",neutral
+937,2025-07-22,review,"Amazing quality for the price, highly recommend this speaker.",positive
+938,2025-02-03,social_media,just tried the new coffee shop downtown and im obsessed!! best latte ever,positive
+939,2025-01-29,social_media,why does my wifi keep dropping every five minutes this is so annoying,negative
+940,2025-09-16,review,"This tablet made my life so much easier, thank you!",positive
+941,2025-06-29,review,"It's a keyboard, works as expected for the price point.",neutral
+942,2025-03-20,social_media,"just lost my favorite sweater at the gym, today is not my day",negative
+943,2025-07-12,review,I received the water bottle yesterday and haven't tested it fully yet.,neutral
+944,2025-08-12,review,"Amazing quality for the price, highly recommend this tablet.",positive
+945,2025-04-06,news,Quarterly report shows steady performance in line with expectations.,neutral
+946,2025-10-05,review,"Do not buy this speaker, it stopped working within a week.",negative
+947,2025-06-30,news,Company faces backlash after massive data breach affects millions.,negative
+948,2025-03-15,review,"Honestly didn't expect much, and somehow this coffee maker still disappointed me.",negative
+949,2025-07-16,review,"This webcam is functional, no major issues to report so far.",neutral
+950,2025-03-18,review,"It's a water bottle, works as expected for the price point.",neutral
+951,2025-10-18,news,Officials criticized for slow response during the ongoing crisis.,negative
+952,2025-12-25,social_media,"can't believe how good this movie was, definitely watching it again",positive
+953,2025-07-22,review,The blender matches the description provided on the listing.,neutral
+954,2025-01-03,review,"This water bottle isn't terrible, it just isn't great.",neutral
+955,2025-12-05,review,The tablet arrived damaged and customer service was unhelpful.,negative
+956,2025-09-17,review,"I'm so impressed with this blender, it's a game changer.",positive
+957,2025-05-29,social_media,"trying out a new recipe tonight, we'll see how it goes",neutral
+958,2025-04-29,review,"Worst phone case I've ever purchased, complete garbage.",negative
+959,2025-02-01,review,"This running shoes made my life so much easier, thank you!",positive
+960,2025-04-28,review,"Best phone case I've ever bought, worth every penny.",positive
+961,2025-02-04,review,"This router isn't perfect, but it's good enough for casual use.",neutral
+962,2025-02-17,social_media,"ordered food an hour ago and it still hasn't arrived, ridiculous",negative
