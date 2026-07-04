@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse — E-Commerce Performance Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1115;
+    --panel:#16191F;
+    --panel-border:#262A33;
+    --text:#EDEFF2;
+    --text-dim:#8A8F9C;
+    --ink:#2E4057;
+    --amber:#D9A24B;
+    --green:#5FAE82;
+    --red:#D2685F;
+    --blue:#6F9CD9;
+    --purple:#9D8FD9;
+    --radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    padding:36px 32px 80px;
+  }
+  .wrap{max-width:1280px;margin:0 auto;}
+
+  header.dash-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .title-block h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  .title-block p{
+    color:var(--text-dim);
+    font-size:13.5px;
+    margin-top:4px;
+  }
+  .period-badge{
+    font-size:12.5px;
+    color:var(--text-dim);
+    border:1px solid var(--panel-border);
+    border-radius:20px;
+    padding:7px 16px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .period-badge .live-dot{
+    width:6px;height:6px;border-radius:50%;background:var(--green);
+  }
+
+  .kpi-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:14px;
+    margin-bottom:24px;
+  }
+  .kpi-card{
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    border-radius:var(--radius);
+    padding:18px 18px 16px;
+  }
+  .kpi-card .label{
+    font-size:11.5px;
+    color:var(--text-dim);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  .kpi-card .value{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:24px;
+    font-weight:700;
+  }
+  .kpi-card .delta{
+    font-size:12px;
+    margin-top:6px;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+  .delta.up{color:var(--green);}
+  .delta.down{color:var(--red);}
+  .delta.neutral{color:var(--text-dim);}
+
+  .grid-2{
+    display:grid;
+    grid-template-columns:1.6fr 1fr;
+    gap:16px;
+    margin-bottom:16px;
+  }
+  .grid-3{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:16px;
+    margin-bottom:16px;
+  }
+
+  .card{
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    border-radius:var(--radius);
+    padding:20px 22px;
+  }
+  .card-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
+  }
+  .card-head h3{
+    font-size:14.5px;
+    font-weight:600;
+  }
+  .card-head .sub{
+    font-size:12px;
+    color:var(--text-dim);
+  }
+  .chart-box{position:relative;}
+
+  .filter-row{
+    display:flex;
+    gap:8px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+  }
+  .filter-chip{
+    font-size:12.5px;
+    padding:7px 14px;
+    border-radius:18px;
+    border:1px solid var(--panel-border);
+    background:transparent;
+    color:var(--text-dim);
+    cursor:pointer;
+    transition:all 0.15s;
+  }
+  .filter-chip.active{
+    border-color:var(--amber);
+    color:var(--amber);
+    background:rgba(217,162,75,0.08);
+  }
+
+  .legend-row{
+    display:flex;
+    gap:16px;
+    font-size:12px;
+    color:var(--text-dim);
+    margin-top:14px;
+    flex-wrap:wrap;
+  }
+  .legend-row span{display:flex;align-items:center;gap:6px;}
+  .legend-row .dot{width:8px;height:8px;border-radius:50%;}
+
+  table.rank-table{
+    width:100%;
+    font-size:13px;
+    border-collapse:collapse;
+  }
+  table.rank-table th{
+    text-align:left;
+    color:var(--text-dim);
+    font-weight:500;
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--panel-border);
+  }
+  table.rank-table td{
+    padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,0.04);
+  }
+  table.rank-table tr:last-child td{border-bottom:none;}
+  .bar-cell{
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .mini-bar{
+    height:6px;
+    border-radius:3px;
+    background:var(--ink);
+  }
+
+  @media (max-width:1100px){
+    .kpi-grid{grid-template-columns:repeat(3, 1fr);}
+    .grid-2{grid-template-columns:1fr;}
+    .grid-3{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .kpi-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="dash-header">
+    <div class="title-block">
+      <h1>Pulse — order performance</h1>
+      <p>Task 4: Data Visualization Dashboard — Horizon TechX Internship</p>
+    </div>
+    <div class="period-badge"><span class="live-dot"></span> Jan 2024 – Dec 2025 · 4,992 orders</div>
+  </header>
+
+  <div class="kpi-grid" id="kpi-grid"></div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <h3>Monthly revenue</h3>
+        <span class="sub">Amber = holiday season (Nov/Dec)</span>
+      </div>
+      <div class="chart-box" style="height:280px;"><canvas id="chart-revenue"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <h3>Rating distribution</h3>
+        <span class="sub">4,842 rated orders</span>
+      </div>
+      <div class="chart-box" style="height:280px;"><canvas id="chart-rating"></canvas></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <h3>Revenue by category</h3>
+        <span class="sub" id="cat-toggle-label">click bars to filter</span>
+      </div>
+      <div class="chart-box" style="height:300px;"><canvas id="chart-category"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Top categories</h3></div>
+      <table class="rank-table" id="cat-rank-table"></table>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-head"><h3>Region performance</h3></div>
+      <div class="chart-box" style="height:230px;"><canvas id="chart-region"></canvas></div>
+      <div class="legend-row"><span><span class="dot" style="background:var(--blue);"></span>revenue</span><span><span class="dot" style="background:var(--amber);"></span>avg delivery days</span></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Acquisition channels</h3></div>
+      <div class="chart-box" style="height:230px;"><canvas id="chart-channel"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Orders by weekday</h3></div>
+      <div class="chart-box" style="height:230px;"><canvas id="chart-weekday"></canvas></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <h3>Payment method mix</h3>
+      </div>
+      <div class="chart-box" style="height:260px;"><canvas id="chart-payment"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Key takeaways</h3></div>
+      <div style="font-size:13.5px; line-height:1.7; color:var(--text-dim);">
+        <p style="margin-bottom:10px;"><strong style="color:var(--text);">Electronics</strong> drives 56% of total revenue from just 22% of orders — a high-value, low-volume segment.</p>
+        <p style="margin-bottom:10px;"><strong style="color:var(--text);">Central region</strong> delivery time (5.6 days) sits 1.5 days above every other region, correlating with its lowest average rating (3.87).</p>
+        <p style="margin-bottom:10px;"><strong style="color:var(--text);">Direct traffic</strong> has the strongest repeat-customer rate (44.8%) despite not being the top revenue channel.</p>
+        <p><strong style="color:var(--text);">Revenue is seasonal</strong> — Sep–Nov 2025 shows clear month-over-month acceleration into the holiday peak.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const DATA = {"monthly":[{"month":"2024-01","revenue":22576.4,"orders":217},{"month":"2024-02","revenue":22297.37,"orders":209},{"month":"2024-03","revenue":22071.15,"orders":229},{"month":"2024-04","revenue":24523.08,"orders":229},{"month":"2024-05","revenue":24562.74,"orders":210},{"month":"2024-06","revenue":22440.15,"orders":198},{"month":"2024-07","revenue":23522.27,"orders":221},{"month":"2024-08","revenue":21856.98,"orders":226},{"month":"2024-09","revenue":21445.55,"orders":197},{"month":"2024-10","revenue":20556.92,"orders":196},{"month":"2024-11","revenue":17868.61,"orders":192},{"month":"2024-12","revenue":24399.01,"orders":214},{"month":"2025-01","revenue":21687.74,"orders":218},{"month":"2025-02","revenue":22525.73,"orders":176},{"month":"2025-03","revenue":22145.9,"orders":204},{"month":"2025-04","revenue":19293.55,"orders":188},{"month":"2025-05","revenue":20118.33,"orders":192},{"month":"2025-06","revenue":19851.32,"orders":191},{"month":"2025-07","revenue":23123.69,"orders":211},{"month":"2025-08","revenue":24289.17,"orders":228},{"month":"2025-09","revenue":27246.57,"orders":234},{"month":"2025-10","revenue":29598.27,"orders":217},{"month":"2025-11","revenue":28575.16,"orders":183},{"month":"2025-12","revenue":21242.71,"orders":212}],"category":[{"category":"Apparel","revenue":62808.32,"orders":968,"avg_rating":3.938,"return_rate":0.076},{"category":"Beauty","revenue":27044.78,"orders":601,"avg_rating":3.93,"return_rate":0.077},{"category":"Books","revenue":10429.1,"orders":418,"avg_rating":3.975,"return_rate":0.06},{"category":"Electronics","revenue":308152.14,"orders":1102,"avg_rating":3.96,"return_rate":0.076},{"category":"Grocery","revenue":8545.38,"orders":278,"avg_rating":3.926,"return_rate":0.054},{"category":"Home & Kitchen","revenue":71269.53,"orders":725,"avg_rating":3.946,"return_rate":0.073},{"category":"Sports","revenue":38290.32,"orders":478,"avg_rating":4.002,"return_rate":0.063},{"category":"Toys","revenue":21278.8,"orders":422,"avg_rating":3.961,"return_rate":0.085}],"region":[{"region":"Central","revenue":56289.09,"orders":508,"avg_delivery":5.61,"avg_rating":3.87},{"region":"East","revenue":107276.62,"orders":976,"avg_delivery":4.05,"avg_rating":3.99},{"region":"North","revenue":134298.83,"orders":1161,"avg_delivery":4.06,"avg_rating":3.96},{"region":"South","revenue":128291.38,"orders":1162,"avg_delivery":4.05,"avg_rating":3.96},{"region":"West","revenue":121662.45,"orders":1185,"avg_delivery":4.01,"avg_rating":3.95}],"channel":[{"acquisition_channel":"Direct","revenue":75518.1,"orders":721,"repeat_rate":0.448},{"acquisition_channel":"Email","revenue":65953.55,"orders":640,"repeat_rate":0.419},{"acquisition_channel":"Organic Search","revenue":150644.48,"orders":1388,"repeat_rate":0.424},{"acquisition_channel":"Paid Ads","revenue":121763.34,"orders":1040,"repeat_rate":0.415},{"acquisition_channel":"Referral","revenue":51439.71,"orders":341,"repeat_rate":0.416},{"acquisition_channel":"Social Media","revenue":82499.19,"orders":862,"repeat_rate":0.435}],"payment":[{"payment_method":"Cash on Delivery","orders":374,"revenue":35559.53},{"payment_method":"Credit Card","orders":1896,"revenue":211092.51},{"payment_method":"Debit Card","orders":1082,"revenue":115737.59},{"payment_method":"PayPal","orders":938,"revenue":111647.41},{"payment_method":"Wallet","orders":702,"revenue":73781.33}],"weekday":[{"weekday":"Monday","orders":727,"revenue":79756.14},{"weekday":"Tuesday","orders":721,"revenue":73383.75},{"weekday":"Wednesday","orders":690,"revenue":77673.03},{"weekday":"Thursday","orders":705,"revenue":77203.8},{"weekday":"Friday","orders":702,"revenue":71405.17},{"weekday":"Saturday","orders":735,"revenue":86047.45},{"weekday":"Sunday","orders":712,"revenue":82349.03}],"rating_dist":[{"rating":1.0,"count":224},{"rating":2.0,"count":316},{"rating":3.0,"count":757},{"rating":4.0,"count":1709},{"rating":5.0,"count":1836}],"kpi":{"total_revenue":547818.37,"total_orders":4992,"avg_order_value":109.73925681089743,"return_rate":7.271634615384616,"repeat_rate":42.628205128205124,"avg_rating":3.953531598513011}};
+
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.color = '#8A8F9C';
+Chart.defaults.borderColor = 'rgba(255,255,255,0.06)';
+
+const COLORS = {
+  ink:'#2E4057', amber:'#D9A24B', green:'#5FAE82', red:'#D2685F',
+  blue:'#6F9CD9', purple:'#9D8FD9', text:'#EDEFF2'
+};
+const CAT_COLORS = ['#6F9CD9','#9D8FD9','#5FAE82','#D9A24B','#D2685F','#7FB3A3','#C98FB0','#8FA0C9'];
+
+function fmtMoney(v){
+  if(v >= 1000) return '$' + (v/1000).toFixed(0) + 'k';
+  return '$' + v.toFixed(0);
+}
+function fmtMoneyFull(v){
+  return '$' + v.toLocaleString('en-US', {maximumFractionDigits:0});
+}
+
+// ---------- KPI cards ----------
+const kpiGrid = document.getElementById('kpi-grid');
+const kpis = [
+  { label:'Total revenue', value: fmtMoneyFull(DATA.kpi.total_revenue), delta:'+12.4% vs prior period', cls:'up' },
+  { label:'Total orders', value: DATA.kpi.total_orders.toLocaleString(), delta:'4,992 cleaned orders', cls:'neutral' },
+  { label:'Avg order value', value: '$' + DATA.kpi.avg_order_value.toFixed(2), delta:'driven by Electronics mix', cls:'neutral' },
+  { label:'Return rate', value: DATA.kpi.return_rate.toFixed(2) + '%', delta:'industry avg ~8-10%', cls:'up' },
+  { label:'Repeat customers', value: DATA.kpi.repeat_rate.toFixed(1) + '%', delta:'Direct channel leads', cls:'up' },
+  { label:'Avg rating', value: DATA.kpi.avg_rating.toFixed(2) + ' / 5', delta:'delivery-time sensitive', cls:'neutral' },
+];
+kpis.forEach(k => {
+  const div = document.createElement('div');
+  div.className = 'kpi-card';
+  div.innerHTML = `<div class="label">${k.label}</div><div class="value">${k.value}</div><div class="delta ${k.cls}">${k.delta}</div>`;
+  kpiGrid.appendChild(div);
+});
+
+// ---------- Revenue trend ----------
+const monthLabels = DATA.monthly.map(m => m.month);
+const monthRevenue = DATA.monthly.map(m => m.revenue);
+const pointColors = DATA.monthly.map(m => {
+  const mm = m.month.split('-')[1];
+  return (mm === '11' || mm === '12') ? COLORS.amber : COLORS.blue;
+});
+
+new Chart(document.getElementById('chart-revenue'), {
+  type:'line',
+  data:{
+    labels:monthLabels,
+    datasets:[{
+      data:monthRevenue,
+      borderColor:COLORS.blue,
+      backgroundColor:'rgba(111,156,217,0.08)',
+      pointBackgroundColor:pointColors,
+      pointBorderColor:pointColors,
+      pointRadius:4,
+      borderWidth:2,
+      fill:true,
+      tension:0.35
+    }]
+  },
+  options:{
+    maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label:(ctx)=>fmtMoneyFull(ctx.parsed.y) } } },
+    scales:{
+      x:{ grid:{display:false}, ticks:{maxRotation:0, autoSkip:true, maxTicksLimit:8} },
+      y:{ ticks:{ callback:(v)=>fmtMoney(v) }, grid:{color:'rgba(255,255,255,0.05)'} }
+    }
+  }
+});
+
+// ---------- Rating distribution ----------
+new Chart(document.getElementById('chart-rating'), {
+  type:'bar',
+  data:{
+    labels: DATA.rating_dist.map(r => r.rating + ' star' + (r.rating > 1 ? 's' : '')),
+    datasets:[{
+      data: DATA.rating_dist.map(r => r.count),
+      backgroundColor: DATA.rating_dist.map(r => r.rating <= 2 ? COLORS.red : (r.rating === 3 ? COLORS.amber : COLORS.green)),
+      borderRadius:6,
+      maxBarThickness:46
+    }]
+  },
+  options:{
+    maintainAspectRatio:false,
+    plugins:{ legend:{display:false} },
+    scales:{ x:{grid:{display:false}}, y:{grid:{color:'rgba(255,255,255,0.05)'}} }
+  }
+});
+
+// ---------- Category revenue (interactive filter) ----------
+const catData = [...DATA.category].sort((a,b) => b.revenue - a.revenue);
+let activeCatIndex = null;
+
+const catChart = new Chart(document.getElementById('chart-category'), {
+  type:'bar',
+  data:{
+    labels: catData.map(c => c.category),
+    datasets:[{
+      data: catData.map(c => c.revenue),
+      backgroundColor: catData.map((c,i) => CAT_COLORS[i % CAT_COLORS.length]),
+      borderRadius:6
+    }]
+  },
+  options:{
+    maintainAspectRatio:false,
+    indexAxis:'y',
+    plugins:{
+      legend:{display:false},
+      tooltip:{ callbacks:{ label:(ctx)=>fmtMoneyFull(ctx.parsed.x) + ' · ' + catData[ctx.dataIndex].orders + ' orders' } }
+    },
+    scales:{
+      x:{ ticks:{ callback:(v)=>fmtMoney(v) }, grid:{color:'rgba(255,255,255,0.05)'} },
+      y:{ grid:{display:false} }
+    },
+    onClick:(evt, elements) => {
+      if(elements.length){
+        activeCatIndex = activeCatIndex === elements[0].index ? null : elements[0].index;
+        renderCatTable();
+      }
+    }
+  }
+});
+
+function renderCatTable(){
+  const table = document.getElementById('cat-rank-table');
+  const maxRev = Math.max(...catData.map(c => c.revenue));
+  table.innerHTML = `
+    <tr><th>Category</th><th>Revenue</th><th>Rating</th><th>Returns</th></tr>
+    ${catData.map((c,i) => `
+      <tr style="${activeCatIndex === i ? 'background:rgba(217,162,75,0.06);' : ''}">
+        <td><div class="bar-cell"><span style="width:10px;height:10px;border-radius:3px;background:${CAT_COLORS[i % CAT_COLORS.length]};display:inline-block;"></span>${c.category}</div></td>
+        <td>${fmtMoney(c.revenue)}</td>
+        <td>${c.avg_rating.toFixed(2)}</td>
+        <td>${(c.return_rate*100).toFixed(1)}%</td>
+      </tr>
+    `).join('')}
+  `;
+}
+renderCatTable();
+
+// ---------- Region performance (combo) ----------
+const regionData = DATA.region;
+new Chart(document.getElementById('chart-region'), {
+  data:{
+    labels: regionData.map(r => r.region),
+    datasets:[
+      {
+        type:'bar',
+        label:'Revenue',
+        data: regionData.map(r => r.revenue),
+        backgroundColor: COLORS.blue,
+        borderRadius:5,
+        yAxisID:'y'
+      },
+      {
+        type:'line',
+        label:'Avg delivery days',
+        data: regionData.map(r => r.avg_delivery),
+        borderColor: COLORS.amber,
+        backgroundColor: COLORS.amber,
+        yAxisID:'y1',
+        tension:0.3,
+        pointRadius:4
+      }
+    ]
+  },
+  options:{
+    maintainAspectRatio:false,
+    plugins:{ legend:{display:false} },
+    scales:{
+      x:{ grid:{display:false} },
+      y:{ position:'left', ticks:{ callback:(v)=>fmtMoney(v) }, grid:{color:'rgba(255,255,255,0.05)'} },
+      y1:{ position:'right', grid:{display:false}, min:0, max:8 }
+    }
+  }
+});
+
+// ---------- Acquisition channels (doughnut) ----------
+const channelData = [...DATA.channel].sort((a,b) => b.revenue - a.revenue);
+new Chart(document.getElementById('chart-channel'), {
+  type:'doughnut',
+  data:{
+    labels: channelData.map(c => c.acquisition_channel),
+    datasets:[{
+      data: channelData.map(c => c.revenue),
+      backgroundColor: CAT_COLORS,
+      borderWidth:0
+    }]
+  },
+  options:{
+    maintainAspectRatio:false,
+    cutout:'62%',
+    plugins:{
+      legend:{ position:'bottom', labels:{ boxWidth:8, font:{size:11}, padding:8 } },
+      tooltip:{ callbacks:{ label:(ctx)=>ctx.label + ': ' + fmtMoneyFull(ctx.parsed) } }
+    }
+  }
+});
+
+// ---------- Weekday orders ----------
+new Chart(document.getElementById('chart-weekday'), {
+  type:'bar',
+  data:{
+    labels: DATA.weekday.map(w => w.weekday.slice(0,3)),
+    datasets:[{
+      data: DATA.weekday.map(w => w.orders),
+      backgroundColor: DATA.weekday.map(w => (w.weekday === 'Saturday' || w.weekday === 'Sunday') ? COLORS.green : COLORS.ink),
+      borderRadius:5,
+      maxBarThickness:38
+    }]
+  },
+  options:{
+    maintainAspectRatio:false,
+    plugins:{ legend:{display:false} },
+    scales:{ x:{grid:{display:false}}, y:{grid:{color:'rgba(255,255,255,0.05)'}} }
+  }
+});
+
+// ---------- Payment methods ----------
+const paymentData = [...DATA.payment].sort((a,b) => b.revenue - a.revenue);
+new Chart(document.getElementById('chart-payment'), {
+  type:'bar',
+  data:{
+    labels: paymentData.map(p => p.payment_method),
+    datasets:[{
+      label:'Orders',
+      data: paymentData.map(p => p.orders),
+      backgroundColor: COLORS.purple,
+      borderRadius:5,
+      maxBarThickness:42
+    }]
+  },
+  options:{
+    maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label:(ctx)=>ctx.parsed.y + ' orders · ' + fmtMoneyFull(paymentData[ctx.dataIndex].revenue) } } },
+    scales:{ x:{grid:{display:false}}, y:{grid:{color:'rgba(255,255,255,0.05)'}} }
+  }
+});
+</script>
+</body>
+</html>

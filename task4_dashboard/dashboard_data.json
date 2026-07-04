@@ -1,0 +1,351 @@
+{
+  "monthly": [
+    {
+      "month": "2024-01",
+      "revenue": 22576.4,
+      "orders": 217
+    },
+    {
+      "month": "2024-02",
+      "revenue": 22297.37,
+      "orders": 209
+    },
+    {
+      "month": "2024-03",
+      "revenue": 22071.15,
+      "orders": 229
+    },
+    {
+      "month": "2024-04",
+      "revenue": 24523.08,
+      "orders": 229
+    },
+    {
+      "month": "2024-05",
+      "revenue": 24562.74,
+      "orders": 210
+    },
+    {
+      "month": "2024-06",
+      "revenue": 22440.15,
+      "orders": 198
+    },
+    {
+      "month": "2024-07",
+      "revenue": 23522.27,
+      "orders": 221
+    },
+    {
+      "month": "2024-08",
+      "revenue": 21856.98,
+      "orders": 226
+    },
+    {
+      "month": "2024-09",
+      "revenue": 21445.55,
+      "orders": 197
+    },
+    {
+      "month": "2024-10",
+      "revenue": 20556.92,
+      "orders": 196
+    },
+    {
+      "month": "2024-11",
+      "revenue": 17868.61,
+      "orders": 192
+    },
+    {
+      "month": "2024-12",
+      "revenue": 24399.01,
+      "orders": 214
+    },
+    {
+      "month": "2025-01",
+      "revenue": 21687.74,
+      "orders": 218
+    },
+    {
+      "month": "2025-02",
+      "revenue": 22525.73,
+      "orders": 176
+    },
+    {
+      "month": "2025-03",
+      "revenue": 22145.9,
+      "orders": 204
+    },
+    {
+      "month": "2025-04",
+      "revenue": 19293.55,
+      "orders": 188
+    },
+    {
+      "month": "2025-05",
+      "revenue": 20118.329999999998,
+      "orders": 192
+    },
+    {
+      "month": "2025-06",
+      "revenue": 19851.32,
+      "orders": 191
+    },
+    {
+      "month": "2025-07",
+      "revenue": 23123.69,
+      "orders": 211
+    },
+    {
+      "month": "2025-08",
+      "revenue": 24289.170000000002,
+      "orders": 228
+    },
+    {
+      "month": "2025-09",
+      "revenue": 27246.57,
+      "orders": 234
+    },
+    {
+      "month": "2025-10",
+      "revenue": 29598.27,
+      "orders": 217
+    },
+    {
+      "month": "2025-11",
+      "revenue": 28575.16,
+      "orders": 183
+    },
+    {
+      "month": "2025-12",
+      "revenue": 21242.71,
+      "orders": 212
+    }
+  ],
+  "category": [
+    {
+      "category": "Apparel",
+      "revenue": 62808.32,
+      "orders": 968,
+      "avg_rating": 3.938,
+      "return_rate": 0.076
+    },
+    {
+      "category": "Beauty",
+      "revenue": 27044.78,
+      "orders": 601,
+      "avg_rating": 3.93,
+      "return_rate": 0.077
+    },
+    {
+      "category": "Books",
+      "revenue": 10429.1,
+      "orders": 418,
+      "avg_rating": 3.975,
+      "return_rate": 0.06
+    },
+    {
+      "category": "Electronics",
+      "revenue": 308152.14,
+      "orders": 1102,
+      "avg_rating": 3.96,
+      "return_rate": 0.076
+    },
+    {
+      "category": "Grocery",
+      "revenue": 8545.38,
+      "orders": 278,
+      "avg_rating": 3.926,
+      "return_rate": 0.054
+    },
+    {
+      "category": "Home & Kitchen",
+      "revenue": 71269.53,
+      "orders": 725,
+      "avg_rating": 3.946,
+      "return_rate": 0.073
+    },
+    {
+      "category": "Sports",
+      "revenue": 38290.32,
+      "orders": 478,
+      "avg_rating": 4.002,
+      "return_rate": 0.063
+    },
+    {
+      "category": "Toys",
+      "revenue": 21278.8,
+      "orders": 422,
+      "avg_rating": 3.961,
+      "return_rate": 0.085
+    }
+  ],
+  "region": [
+    {
+      "region": "Central",
+      "revenue": 56289.09,
+      "orders": 508,
+      "avg_delivery": 5.61,
+      "avg_rating": 3.87
+    },
+    {
+      "region": "East",
+      "revenue": 107276.62,
+      "orders": 976,
+      "avg_delivery": 4.05,
+      "avg_rating": 3.99
+    },
+    {
+      "region": "North",
+      "revenue": 134298.83,
+      "orders": 1161,
+      "avg_delivery": 4.06,
+      "avg_rating": 3.96
+    },
+    {
+      "region": "South",
+      "revenue": 128291.38,
+      "orders": 1162,
+      "avg_delivery": 4.05,
+      "avg_rating": 3.96
+    },
+    {
+      "region": "West",
+      "revenue": 121662.45,
+      "orders": 1185,
+      "avg_delivery": 4.01,
+      "avg_rating": 3.95
+    }
+  ],
+  "channel": [
+    {
+      "acquisition_channel": "Direct",
+      "revenue": 75518.1,
+      "orders": 721,
+      "repeat_rate": 0.448
+    },
+    {
+      "acquisition_channel": "Email",
+      "revenue": 65953.55,
+      "orders": 640,
+      "repeat_rate": 0.419
+    },
+    {
+      "acquisition_channel": "Organic Search",
+      "revenue": 150644.48,
+      "orders": 1388,
+      "repeat_rate": 0.424
+    },
+    {
+      "acquisition_channel": "Paid Ads",
+      "revenue": 121763.34,
+      "orders": 1040,
+      "repeat_rate": 0.415
+    },
+    {
+      "acquisition_channel": "Referral",
+      "revenue": 51439.71,
+      "orders": 341,
+      "repeat_rate": 0.416
+    },
+    {
+      "acquisition_channel": "Social Media",
+      "revenue": 82499.19,
+      "orders": 862,
+      "repeat_rate": 0.435
+    }
+  ],
+  "payment": [
+    {
+      "payment_method": "Cash on Delivery",
+      "orders": 374,
+      "revenue": 35559.53
+    },
+    {
+      "payment_method": "Credit Card",
+      "orders": 1896,
+      "revenue": 211092.51
+    },
+    {
+      "payment_method": "Debit Card",
+      "orders": 1082,
+      "revenue": 115737.59
+    },
+    {
+      "payment_method": "PayPal",
+      "orders": 938,
+      "revenue": 111647.41
+    },
+    {
+      "payment_method": "Wallet",
+      "orders": 702,
+      "revenue": 73781.33
+    }
+  ],
+  "weekday": [
+    {
+      "weekday": "Monday",
+      "orders": 727,
+      "revenue": 79756.14
+    },
+    {
+      "weekday": "Tuesday",
+      "orders": 721,
+      "revenue": 73383.75
+    },
+    {
+      "weekday": "Wednesday",
+      "orders": 690,
+      "revenue": 77673.03
+    },
+    {
+      "weekday": "Thursday",
+      "orders": 705,
+      "revenue": 77203.8
+    },
+    {
+      "weekday": "Friday",
+      "orders": 702,
+      "revenue": 71405.17
+    },
+    {
+      "weekday": "Saturday",
+      "orders": 735,
+      "revenue": 86047.45
+    },
+    {
+      "weekday": "Sunday",
+      "orders": 712,
+      "revenue": 82349.03
+    }
+  ],
+  "rating_dist": [
+    {
+      "rating": 1.0,
+      "count": 224
+    },
+    {
+      "rating": 2.0,
+      "count": 316
+    },
+    {
+      "rating": 3.0,
+      "count": 757
+    },
+    {
+      "rating": 4.0,
+      "count": 1709
+    },
+    {
+      "rating": 5.0,
+      "count": 1836
+    }
+  ],
+  "kpi": {
+    "total_revenue": 547818.37,
+    "total_orders": 4992,
+    "avg_order_value": 109.73925681089743,
+    "return_rate": 7.271634615384616,
+    "repeat_rate": 42.628205128205124,
+    "avg_rating": 3.953531598513011
+  }
+}
