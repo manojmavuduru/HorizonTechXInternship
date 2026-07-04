@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lingua — Language Translation Tool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2238;
+    --ink-soft:#2A3354;
+    --paper:#F0E9DC;
+    --paper-deep:#E5DCC8;
+    --amber:#D9A24B;
+    --amber-soft:#E8C387;
+    --slate:#8C93AC;
+    --slate-light:#C7CCDC;
+    --white:#FAF8F3;
+    --error:#C75450;
+    --success:#5B8C6E;
+    --radius:14px;
+    --shadow-soft:0 1px 2px rgba(27,34,56,0.06);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--ink);
+    color:var(--white);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:48px 24px 80px;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(217,162,75,0.05), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(217,162,75,0.04), transparent 45%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .brand{
+    text-align:center;
+    margin-bottom:8px;
+    position:relative;
+    z-index:1;
+  }
+
+  .brand-mark{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+
+  .brand-glyph{
+    width:34px;
+    height:34px;
+    border:1.5px solid var(--amber-soft);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:16px;
+    color:var(--amber-soft);
+  }
+
+  .brand h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:42px;
+    letter-spacing:-0.01em;
+    color:var(--white);
+  }
+
+  .brand p{
+    font-size:14px;
+    color:var(--slate-light);
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    font-weight:500;
+    margin-top:6px;
+  }
+
+  .stage{
+    width:100%;
+    max-width:1080px;
+    margin-top:48px;
+    position:relative;
+    z-index:1;
+  }
+
+  .lang-bar{
+    display:grid;
+    grid-template-columns:1fr 56px 1fr;
+    gap:0;
+    align-items:center;
+    margin-bottom:0;
+  }
+
+  .lang-select-wrap{
+    position:relative;
+  }
+
+  select.lang-select{
+    width:100%;
+    appearance:none;
+    background:transparent;
+    border:none;
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    font-size:15px;
+    font-weight:500;
+    padding:14px 36px 14px 4px;
+    cursor:pointer;
+    border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+
+  select.lang-select:focus{
+    outline:none;
+    border-bottom-color:var(--amber);
+  }
+
+  .lang-select-wrap::after{
+    content:'';
+    position:absolute;
+    right:8px;
+    top:50%;
+    width:8px;
+    height:8px;
+    border-right:1.5px solid var(--slate-light);
+    border-bottom:1.5px solid var(--slate-light);
+    transform:translateY(-70%) rotate(45deg);
+    pointer-events:none;
+  }
+
+  .lang-select-wrap.right select{
+    text-align:right;
+    padding:14px 4px 14px 36px;
+  }
+  .lang-select-wrap.right::after{
+    right:auto;
+    left:8px;
+  }
+
+  select.lang-select option{
+    background:var(--ink-soft);
+    color:var(--white);
+  }
+
+  .swap-btn{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.15);
+    background:var(--ink-soft);
+    color:var(--amber-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    margin:0 auto;
+    transition:transform 0.25s ease, border-color 0.2s ease;
+  }
+
+  .swap-btn:hover{
+    border-color:var(--amber);
+    transform:rotate(180deg);
+  }
+
+  .swap-btn svg{width:16px;height:16px;}
+
+  .panes{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    margin-top:0;
+    position:relative;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 24px 60px -20px rgba(0,0,0,0.5);
+  }
+
+  .seam{
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:rgba(217,162,75,0.18);
+    transform:translateX(-50%);
+    z-index:3;
+    pointer-events:none;
+  }
+
+  .seam.active{
+    background:linear-gradient(to bottom, transparent, var(--amber), transparent);
+    animation:seam-pulse 1.4s ease-in-out infinite;
+  }
+
+  @keyframes seam-pulse{
+    0%,100%{opacity:0.3;}
+    50%{opacity:1;}
+  }
+
+  .pane{
+    background:var(--ink-soft);
+    min-height:380px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+
+  .pane.target{
+    background:var(--paper);
+  }
+
+  .pane-toolbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 20px;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+
+  .pane.target .pane-toolbar{
+    border-bottom:1px solid rgba(27,34,56,0.08);
+  }
+
+  .pane-label{
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--slate-light);
+    font-weight:600;
+  }
+
+  .pane.target .pane-label{
+    color:#8A7F66;
+  }
+
+  .toolbar-actions{
+    display:flex;
+    gap:6px;
+  }
+
+  .icon-btn{
+    width:30px;
+    height:30px;
+    border-radius:8px;
+    border:none;
+    background:transparent;
+    color:var(--slate-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+
+  .icon-btn:hover{
+    background:rgba(255,255,255,0.08);
+    color:var(--white);
+  }
+
+  .pane.target .icon-btn{
+    color:#8A7F66;
+  }
+
+  .pane.target .icon-btn:hover{
+    background:rgba(27,34,56,0.06);
+    color:var(--ink);
+  }
+
+  .icon-btn svg{width:16px;height:16px;}
+
+  .icon-btn.copied{
+    color:var(--success) !important;
+  }
+
+  textarea#source-text{
+    flex:1;
+    width:100%;
+    background:transparent;
+    border:none;
+    resize:none;
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    font-size:18px;
+    line-height:1.55;
+    padding:22px 24px;
+    outline:none;
+  }
+
+  textarea#source-text::placeholder{
+    color:rgba(255,255,255,0.28);
+  }
+
+  #target-text{
+    flex:1;
+    width:100%;
+    padding:22px 24px;
+    font-family:'Fraunces',serif;
+    font-size:19px;
+    line-height:1.6;
+    color:var(--ink);
+    white-space:pre-wrap;
+    overflow-y:auto;
+  }
+
+  #target-text.placeholder{
+    color:#A89E87;
+    font-style:italic;
+  }
+
+  .pane-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px 14px;
+    font-size:12px;
+    color:var(--slate-light);
+  }
+
+  .pane.target .pane-footer{
+    color:#A89E87;
+  }
+
+  .char-count.over{
+    color:var(--error) !important;
+  }
+
+  .meta-row{
+    display:flex;
+    gap:18px;
+    margin-top:18px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+
+  .quick-langs{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+
+  .quick-tag{
+    font-size:12px;
+    color:var(--slate-light);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:20px;
+    padding:5px 13px;
+    cursor:pointer;
+    transition:all 0.15s ease;
+    background:transparent;
+  }
+
+  .quick-tag:hover, .quick-tag.active{
+    border-color:var(--amber);
+    color:var(--amber-soft);
+  }
+
+  .detect-note{
+    font-size:13px;
+    color:var(--amber-soft);
+    margin-top:10px;
+    min-height:18px;
+  }
+
+  footer.credits{
+    margin-top:56px;
+    text-align:center;
+    color:var(--slate);
+    font-size:13px;
+    position:relative;
+    z-index:1;
+  }
+
+  footer.credits a{
+    color:var(--amber-soft);
+    text-decoration:none;
+  }
+
+  .status-pill{
+    position:absolute;
+    top:14px;
+    right:20px;
+    font-size:11px;
+    padding:4px 10px;
+    border-radius:20px;
+    background:rgba(217,162,75,0.12);
+    color:var(--amber-soft);
+    display:none;
+    z-index:4;
+  }
+
+  .status-pill.show{display:block;}
+  .status-pill.error{
+    background:rgba(199,84,80,0.15);
+    color:#E89894;
+  }
+
+  @media (max-width:760px){
+    .panes{grid-template-columns:1fr;}
+    .seam{display:none;}
+    .lang-bar{grid-template-columns:1fr 48px 1fr;}
+    .brand h1{font-size:32px;}
+    textarea#source-text, #target-text{font-size:16px;}
+  }
+
+  ::selection{background:rgba(217,162,75,0.35);}
+</style>
+</head>
+<body>
+
+<div class="brand">
+  <div class="brand-mark">
+    <div class="brand-glyph">L</div>
+  </div>
+  <h1>Lingua</h1>
+  <p>Speak across languages, instantly</p>
+</div>
+
+<div class="stage">
+
+  <div class="lang-bar">
+    <div class="lang-select-wrap">
+      <select id="source-lang" class="lang-select"></select>
+    </div>
+    <button class="swap-btn" id="swap-btn" title="Swap languages" aria-label="Swap languages">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16V4M7 4L3 8M7 4l4 4"/><path d="M17 8v12m0 0l4-4m-4 4l-4-4"/></svg>
+    </button>
+    <div class="lang-select-wrap right">
+      <select id="target-lang" class="lang-select"></select>
+    </div>
+  </div>
+
+  <div class="panes">
+    <div class="seam" id="seam"></div>
+
+    <div class="pane source">
+      <span class="status-pill" id="status-pill">detecting…</span>
+      <div class="pane-toolbar">
+        <span class="pane-label">Original</span>
+        <div class="toolbar-actions">
+          <button class="icon-btn" id="speak-source" title="Listen" aria-label="Listen to original text">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+          </button>
+          <button class="icon-btn" id="clear-source" title="Clear" aria-label="Clear text">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+      <textarea id="source-text" placeholder="Type or paste text to translate…" maxlength="2000"></textarea>
+      <div class="pane-footer">
+        <span id="detected-lang-label"></span>
+        <span class="char-count" id="char-count">0 / 2000</span>
+      </div>
+    </div>
+
+    <div class="pane target">
+      <div class="pane-toolbar">
+        <span class="pane-label">Translation</span>
+        <div class="toolbar-actions">
+          <button class="icon-btn" id="speak-target" title="Listen" aria-label="Listen to translation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+          </button>
+          <button class="icon-btn" id="copy-target" title="Copy" aria-label="Copy translation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="target-text" class="placeholder">Your translation will appear here.</div>
+      <div class="pane-footer">
+        <span id="confidence-label"></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="meta-row">
+    <div class="quick-langs" id="quick-langs"></div>
+  </div>
+  <div class="detect-note" id="detect-note"></div>
+</div>
+
+<footer class="credits">Built for the Horizon TechX internship — Task 1: Language Translation Tool (AI + NLP)</footer>
+
+<script>
+const LANGUAGES = [
+  {code:'auto', name:'Detect language'},
+  {code:'en', name:'English'},
+  {code:'es', name:'Spanish'},
+  {code:'fr', name:'French'},
+  {code:'de', name:'German'},
+  {code:'it', name:'Italian'},
+  {code:'pt', name:'Portuguese'},
+  {code:'ru', name:'Russian'},
+  {code:'zh-CN', name:'Chinese (Simplified)'},
+  {code:'ja', name:'Japanese'},
+  {code:'ko', name:'Korean'},
+  {code:'ar', name:'Arabic'},
+  {code:'hi', name:'Hindi'},
+  {code:'te', name:'Telugu'},
+  {code:'ta', name:'Tamil'},
+  {code:'bn', name:'Bengali'},
+  {code:'ur', name:'Urdu'},
+  {code:'nl', name:'Dutch'},
+  {code:'tr', name:'Turkish'},
+  {code:'vi', name:'Vietnamese'},
+  {code:'th', name:'Thai'},
+  {code:'pl', name:'Polish'},
+  {code:'sv', name:'Swedish'},
+  {code:'el', name:'Greek'},
+  {code:'he', name:'Hebrew'},
+  {code:'id', name:'Indonesian'},
+];
+
+const QUICK = ['es','fr','de','hi','ja','zh-CN'];
+
+const sourceSelect = document.getElementById('source-lang');
+const targetSelect = document.getElementById('target-lang');
+const sourceText = document.getElementById('source-text');
+const targetText = document.getElementById('target-text');
+const charCount = document.getElementById('char-count');
+const seam = document.getElementById('seam');
+const statusPill = document.getElementById('status-pill');
+const detectedLabel = document.getElementById('detected-lang-label');
+const confidenceLabel = document.getElementById('confidence-label');
+const detectNote = document.getElementById('detect-note');
+const quickLangsEl = document.getElementById('quick-langs');
+
+function populateSelect(select, includeAuto){
+  select.innerHTML = '';
+  LANGUAGES.forEach(l => {
+    if(!includeAuto && l.code === 'auto') return;
+    const opt = document.createElement('option');
+    opt.value = l.code;
+    opt.textContent = l.name;
+    select.appendChild(opt);
+  });
+}
+populateSelect(sourceSelect, true);
+populateSelect(targetSelect, false);
+sourceSelect.value = 'auto';
+targetSelect.value = 'es';
+
+QUICK.forEach(code => {
+  const lang = LANGUAGES.find(l => l.code === code);
+  const tag = document.createElement('button');
+  tag.className = 'quick-tag';
+  tag.textContent = lang.name;
+  tag.dataset.code = code;
+  tag.addEventListener('click', () => {
+    targetSelect.value = code;
+    updateQuickActive();
+    runTranslate();
+  });
+  quickLangsEl.appendChild(tag);
+});
+
+function updateQuickActive(){
+  document.querySelectorAll('.quick-tag').forEach(t => {
+    t.classList.toggle('active', t.dataset.code === targetSelect.value);
+  });
+}
+updateQuickActive();
+
+function langName(code){
+  const l = LANGUAGES.find(l => l.code === code);
+  return l ? l.name : code;
+}
+
+let debounceTimer = null;
+let lastRequestId = 0;
+
+async function runTranslate(){
+  const text = sourceText.value.trim();
+  charCount.textContent = `${sourceText.value.length} / 2000`;
+  charCount.classList.toggle('over', sourceText.value.length > 2000);
+
+  if(!text){
+    targetText.textContent = 'Your translation will appear here.';
+    targetText.classList.add('placeholder');
+    detectedLabel.textContent = '';
+    confidenceLabel.textContent = '';
+    statusPill.classList.remove('show');
+    seam.classList.remove('active');
+    detectNote.textContent = '';
+    return;
+  }
+
+  const requestId = ++lastRequestId;
+  seam.classList.add('active');
+  statusPill.textContent = 'translating…';
+  statusPill.classList.remove('error');
+  statusPill.classList.add('show');
+
+  const sl = sourceSelect.value;
+  const tl = targetSelect.value;
+
+  try {
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sl}&tl=${tl}&dt=t&dt=bd&q=${encodeURIComponent(text)}`;
+    const res = await fetch(url);
+    if(!res.ok) throw new Error('Translation service unavailable');
+    const data = await res.json();
+
+    if(requestId !== lastRequestId) return;
+
+    const translated = data[0].map(seg => seg[0]).join('');
+    const detected = data[2];
+
+    targetText.textContent = translated;
+    targetText.classList.remove('placeholder');
+
+    if(sl === 'auto' && detected){
+      detectedLabel.textContent = `Detected: ${langName(detected)}`;
+      detectNote.textContent = `Auto-detected source language as ${langName(detected)}.`;
+    } else {
+      detectedLabel.textContent = '';
+      detectNote.textContent = '';
+    }
+
+    confidenceLabel.textContent = `${langName(sl === 'auto' ? detected : sl)} → ${langName(tl)}`;
+    statusPill.classList.remove('show');
+  } catch(err){
+    if(requestId !== lastRequestId) return;
+    targetText.textContent = 'Translation failed — check your connection and try again.';
+    targetText.classList.remove('placeholder');
+    statusPill.textContent = 'error';
+    statusPill.classList.add('error');
+    statusPill.classList.add('show');
+  } finally {
+    if(requestId === lastRequestId){
+      seam.classList.remove('active');
+    }
+  }
+}
+
+sourceText.addEventListener('input', () => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(runTranslate, 450);
+});
+
+sourceSelect.addEventListener('change', runTranslate);
+targetSelect.addEventListener('change', () => { updateQuickActive(); runTranslate(); });
+
+document.getElementById('swap-btn').addEventListener('click', () => {
+  if(sourceSelect.value === 'auto') return;
+  const s = sourceSelect.value;
+  const t = targetSelect.value;
+  sourceSelect.value = t;
+  targetSelect.value = s;
+  sourceText.value = targetText.classList.contains('placeholder') ? sourceText.value : targetText.textContent;
+  updateQuickActive();
+  runTranslate();
+});
+
+document.getElementById('clear-source').addEventListener('click', () => {
+  sourceText.value = '';
+  runTranslate();
+  sourceText.focus();
+});
+
+document.getElementById('copy-target').addEventListener('click', () => {
+  if(targetText.classList.contains('placeholder')) return;
+  navigator.clipboard.writeText(targetText.textContent).then(() => {
+    const btn = document.getElementById('copy-target');
+    btn.classList.add('copied');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
+    setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = original; }, 1500);
+  });
+});
+
+function speak(text, langCode){
+  if(!text || !('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = langCode === 'auto' ? 'en' : langCode;
+  window.speechSynthesis.speak(utter);
+}
+
+document.getElementById('speak-source').addEventListener('click', () => {
+  speak(sourceText.value, sourceSelect.value === 'auto' ? 'en' : sourceSelect.value);
+});
+
+document.getElementById('speak-target').addEventListener('click', () => {
+  if(targetText.classList.contains('placeholder')) return;
+  speak(targetText.textContent, targetSelect.value);
+});
+</script>
+
+</body>
+</html>
