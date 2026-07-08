@@ -8,3 +8,4 @@ nltk
 joblib
 scipy
 vaderSentiment==3.3.2
+wordcloud
