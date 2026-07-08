@@ -7,3 +7,4 @@ scikit-learn
 nltk
 joblib
 scipy
+vaderSentiment==3.3.2
