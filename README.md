@@ -8,11 +8,11 @@ Five projects completed across web development, NLP, data science, and machine l
 
 | # | Project | Domain | What it is | Live demo | Code |
 |---|---|---|---|---|---|
-| 1 | **Lingua** | AI + NLP | Real-time browser translator, 25 languages, speech synthesis, no backend | [Demo](https://manojmavuduru.github.io/HorizonTechXInternship/task1_translation/) | [`task1_translation`](./task1_translation) |
-| 2 | **Atlas** | NLP | FAQ chatbot using TF-IDF + cosine similarity, not keyword matching | [Demo](https://manojmavuduru.github.io/HorizonTechXInternship/task2_chatbot/) | [`task2_chatbot`](./task2_chatbot) |
+| 1 | **Lingua** | AI + NLP | Real-time browser translator, 25 languages, speech synthesis, no backend | [Demo](https://manojmavuduru.github.io/horizontechx_tasks/task1_translation/) | [`task1_translation`](./task1_translation) |
+| 2 | **Atlas** | NLP | FAQ chatbot using TF-IDF + cosine similarity, not keyword matching | [Demo](https://manojmavuduru.github.io/horizontechx_tasks/task2_chatbot/) | [`task2_chatbot`](./task2_chatbot) |
 | 3 | **Atlas Insights** | Data Analysis / EDA | Full EDA pipeline on a 5,000-row e-commerce dataset with intentional data-quality issues | [Notebook](./task3_eda/EDA_Notebook.ipynb) | [`task3_eda`](./task3_eda) |
-| 4 | **Pulse** | Data Visualization | Interactive analytics dashboard, Chart.js, built on the Task 3 dataset | [Demo](https://manojmavuduru.github.io/HorizonTechXInternship/task4_dashboard/) | [`task4_dashboard`](./task4_dashboard) |
-| 5 | **Sentir** | Sentiment Analysis / ML | Lexicon vs. trained classifier (97.5% accuracy), model ported live to JavaScript | [Demo](https://manojmavuduru.github.io/HorizonTechXInternship/task6_sentiment/) | [`task6_sentiment`](./task6_sentiment) |
+| 4 | **Pulse** | Data Visualization | Interactive analytics dashboard, Chart.js, built on the Task 3 dataset | [Demo](https://manojmavuduru.github.io/horizontechx_tasks/task4_dashboard/) | [`task4_dashboard`](./task4_dashboard) |
+| 5 | **Sentir** | Sentiment Analysis / ML | Lexicon vs. trained classifier (97.5% accuracy), model ported live to JavaScript | [Demo](https://manojmavuduru.github.io/horizontechx_tasks/task6_sentiment/) | [`task6_sentiment`](./task6_sentiment) |
 
 *(Demo links go live once GitHub Pages is enabled on this repo — see [Deployment](#deployment) below.)*
 
