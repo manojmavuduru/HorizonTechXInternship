@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manoj Mavuduru — Horizon TechX Internship</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap');
+
+  :root{
+    --bg:#0B0F14;
+    --bg-raised:#11161D;
+    --line:#1E2732;
+    --text:#EDEEF0;
+    --text-dim:#8B96A3;
+    --accent:#3EE6C4;
+    --accent-dim:#1F8A78;
+    --warn:#F2A93B;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.mono{font-family:'Space Grotesk', sans-serif;}
+  .data,.tag,.pipeline-label{font-family:'IBM Plex Mono', monospace;}
+
+  a{color:inherit; text-decoration:none;}
+
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+
+  /* ---------- HERO ---------- */
+  header{
+    padding:96px 0 64px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  header::before{
+    content:"";
+    position:absolute;
+    top:-200px; right:-200px;
+    width:500px; height:500px;
+    background:radial-gradient(circle, rgba(62,230,196,0.10) 0%, rgba(62,230,196,0) 70%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:20px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--accent); box-shadow:0 0 8px var(--accent);}
+
+  h1{
+    font-size:clamp(36px, 5vw, 56px);
+    font-weight:700;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    max-width:820px;
+  }
+  h1 span{color:var(--text-dim); font-weight:500;}
+
+  .sub{
+    margin-top:22px;
+    font-size:17px;
+    color:var(--text-dim);
+    max-width:600px;
+  }
+
+  .stats{
+    display:flex;
+    gap:0;
+    margin-top:52px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .stat{
+    flex:1;
+    padding:20px 24px;
+    border-right:1px solid var(--line);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:var(--text);}
+  .stat .num .accent{color:var(--accent);}
+  .stat .label{font-size:12px; color:var(--text-dim); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em;}
+
+  /* ---------- PIPELINE STRIP ---------- */
+  .pipeline{
+    padding:48px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .pipeline-label{
+    font-size:12px;
+    color:var(--text-dim);
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    margin-bottom:20px;
+  }
+  .rail{
+    display:flex;
+    align-items:stretch;
+    gap:0;
+    overflow-x:auto;
+  }
+  .stage{
+    flex:1;
+    min-width:150px;
+    padding:16px 18px;
+    border:1px solid var(--line);
+    position:relative;
+    background:var(--bg-raised);
+  }
+  .stage:not(:last-child){border-right:none;}
+  .stage:first-child{border-radius:8px 0 0 8px;}
+  .stage:last-child{border-radius:0 8px 8px 0;}
+  .stage .n{font-size:11px; color:var(--text-dim); font-family:'IBM Plex Mono',monospace;}
+  .stage .name{font-weight:600; margin-top:4px; font-size:14px;}
+  .stage .status{
+    margin-top:10px;
+    font-size:11px;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:3px 8px;
+    border-radius:20px;
+  }
+  .status.live{background:rgba(62,230,196,0.12); color:var(--accent);}
+  .status.live .dot{width:5px; height:5px; border-radius:50%; background:var(--accent);}
+  .status.notebook{background:rgba(242,169,59,0.12); color:var(--warn);}
+  .status.notebook .dot{width:5px; height:5px; border-radius:50%; background:var(--warn);}
+
+  /* ---------- PROJECTS ---------- */
+  .projects{padding:72px 0 96px;}
+  .section-head{margin-bottom:44px;}
+  .section-head h2{font-size:28px; font-weight:600;}
+  .section-head p{color:var(--text-dim); margin-top:8px; font-size:15px;}
+
+  .project{
+    display:grid;
+    grid-template-columns:80px 1fr auto;
+    gap:28px;
+    align-items:start;
+    padding:36px 0;
+    border-top:1px solid var(--line);
+  }
+  .project:last-child{border-bottom:1px solid var(--line);}
+  .p-index{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--accent-dim);
+    padding-top:4px;
+  }
+  .p-main h3{font-size:22px; font-weight:600;}
+  .p-main .p-domain{
+    font-size:11px;
+    color:var(--text-dim);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-top:6px;
+  }
+  .p-main .p-desc{margin-top:14px; color:var(--text-dim); font-size:14.5px; max-width:520px;}
+  .p-main .p-tech{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-size:11px;
+    padding:4px 9px;
+    border:1px solid var(--line);
+    border-radius:5px;
+    color:var(--text-dim);
+  }
+  .p-links{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:flex-end;
+    padding-top:6px;
+    min-width:110px;
+  }
+  .btn{
+    font-size:13px;
+    font-weight:500;
+    padding:8px 16px;
+    border-radius:6px;
+    white-space:nowrap;
+    transition:background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#04231D;
+  }
+  .btn-primary:hover{background:#5FF0D3;}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--text-dim);
+  }
+  .btn-ghost:hover{border-color:var(--accent-dim); color:var(--accent);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:48px 0 72px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+    color:var(--text-dim);
+    font-size:13.5px;
+  }
+  footer a{color:var(--accent);}
+  footer a:hover{text-decoration:underline;}
+
+  @media (max-width:720px){
+    .project{grid-template-columns:1fr; gap:14px;}
+    .p-links{flex-direction:row; align-items:center;}
+    .stats{flex-direction:column;}
+    .stat{border-right:none; border-bottom:1px solid var(--line);}
+    .stat:last-child{border-bottom:none;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><span class="dot"></span>HORIZON TECHX INTERNSHIP · 2026</div>
+    <h1>Five working builds across web, NLP,<br><span>data, and machine learning.</span></h1>
+    <p class="sub">Manoj Mavuduru's internship portfolio — every project runs live in the browser or as a full analysis notebook, no setup required to evaluate.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num"><span class="accent">5</span>/5</div>
+        <div class="label">Tasks completed</div>
+      </div>
+      <div class="stat">
+        <div class="num">4</div>
+        <div class="label">Live browser demos</div>
+      </div>
+      <div class="stat">
+        <div class="num">97.5<span class="accent">%</span></div>
+        <div class="label">Best model accuracy</div>
+      </div>
+      <div class="stat">
+        <div class="num">0</div>
+        <div class="label">Backend deps to run</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="pipeline">
+    <div class="pipeline-label">Build status</div>
+    <div class="rail">
+      <div class="stage">
+        <div class="n">01</div>
+        <div class="name">Lingua</div>
+        <div class="status live"><span class="dot"></span>Live</div>
+      </div>
+      <div class="stage">
+        <div class="n">02</div>
+        <div class="name">Atlas</div>
+        <div class="status live"><span class="dot"></span>Live</div>
+      </div>
+      <div class="stage">
+        <div class="n">03</div>
+        <div class="name">Atlas Insights</div>
+        <div class="status notebook"><span class="dot"></span>Notebook</div>
+      </div>
+      <div class="stage">
+        <div class="n">04</div>
+        <div class="name">Pulse</div>
+        <div class="status live"><span class="dot"></span>Live</div>
+      </div>
+      <div class="stage">
+        <div class="n">05</div>
+        <div class="name">Sentir</div>
+        <div class="status live"><span class="dot"></span>Live</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects">
+    <div class="section-head">
+      <h2>The projects</h2>
+      <p>Each one avoids the shortcut a typical submission takes — real API calls, real vector math, real data-quality problems, real model comparisons.</p>
+    </div>
+
+    <div class="project">
+      <div class="p-index">01</div>
+      <div class="p-main">
+        <h3>Lingua</h3>
+        <div class="p-domain">AI · NLP</div>
+        <p class="p-desc">Real-time browser translator across 25 languages with speech synthesis, race-condition-safe requests, and zero backend.</p>
+        <div class="p-tech"><span class="tag">JavaScript</span><span class="tag">Translation API</span><span class="tag">Web Speech API</span></div>
+      </div>
+      <div class="p-links">
+        <a class="btn btn-primary" href="task1_translation/">Open demo</a>
+        <a class="btn btn-ghost" href="https://github.com/manojmavuduru/horizontechx_tasks/tree/main/task1_translation">Code</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="p-index">02</div>
+      <div class="p-main">
+        <h3>Atlas</h3>
+        <div class="p-domain">NLP</div>
+        <p class="p-desc">FAQ chatbot driven by TF-IDF vectorization and cosine similarity matching — actual retrieval, not keyword `if` statements.</p>
+        <div class="p-tech"><span class="tag">JavaScript</span><span class="tag">TF-IDF</span><span class="tag">Cosine Similarity</span></div>
+      </div>
+      <div class="p-links">
+        <a class="btn btn-primary" href="task2_chatbot/">Open demo</a>
+        <a class="btn btn-ghost" href="https://github.com/manojmavuduru/horizontechx_tasks/tree/main/task2_chatbot">Code</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="p-index">03</div>
+      <div class="p-main">
+        <h3>Atlas Insights</h3>
+        <div class="p-domain">Data Analysis · EDA</div>
+        <p class="p-desc">Full exploratory pipeline on a 5,000-row e-commerce dataset seeded with real data-quality problems — every cleaning decision documented and justified, five findings each tied to a business action.</p>
+        <div class="p-tech"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">seaborn</span><span class="tag">scipy</span></div>
+      </div>
+      <div class="p-links">
+        <a class="btn btn-primary" href="https://github.com/manojmavuduru/horizontechx_tasks/blob/main/task3_eda/EDA_Notebook.ipynb">Open notebook</a>
+        <a class="btn btn-ghost" href="https://github.com/manojmavuduru/horizontechx_tasks/tree/main/task3_eda">Code</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="p-index">04</div>
+      <div class="p-main">
+        <h3>Pulse</h3>
+        <div class="p-domain">Data Visualization</div>
+        <p class="p-desc">Interactive analytics dashboard built on the Task 3 dataset — click-to-filter, dual-axis charts, numbers that trace back to real analysis rather than placeholder values.</p>
+        <div class="p-tech"><span class="tag">JavaScript</span><span class="tag">Chart.js</span></div>
+      </div>
+      <div class="p-links">
+        <a class="btn btn-primary" href="task4_dashboard/">Open demo</a>
+        <a class="btn btn-ghost" href="https://github.com/manojmavuduru/horizontechx_tasks/tree/main/task4_dashboard">Code</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="p-index">05</div>
+      <div class="p-main">
+        <h3>Sentir</h3>
+        <div class="p-domain">Sentiment Analysis · ML</div>
+        <p class="p-desc">Rule-based lexicon baseline compared honestly against a trained classifier (97.5% accuracy) — the winning model's math is re-implemented in vanilla JS and verified to match scikit-learn to 3 decimal places.</p>
+        <div class="p-tech"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">VADER</span><span class="tag">JavaScript</span></div>
+      </div>
+      <div class="p-links">
+        <a class="btn btn-primary" href="task6_sentiment/">Open demo</a>
+        <a class="btn btn-ghost" href="https://github.com/manojmavuduru/horizontechx_tasks/tree/main/task6_sentiment">Code</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>Built by <a href="https://github.com/manojmavuduru">Manoj Mavuduru</a> for the Horizon TechX internship.</div>
+    <div><a href="https://github.com/manojmavuduru/horizontechx_tasks">View full repository →</a></div>
+  </footer>
+</div>
+
+</body>
+</html>
